@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Claude Daily Digest</title>
+    <link>https://apex-integration-lab.github.io/claude-digest-feed/</link>
+    <description>Daily digest of Claude AI updates, tips, and features to help you get more out of Claude.</description>
+    <language>en-us</language>
+    <atom:link href="https://apex-integration-lab.github.io/claude-digest-feed/digest.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Claude Daily Digest — Tuesday, Sep 2, 2026</title>
+      <link>https://apex-integration-lab.github.io/claude-digest-feed/</link>
+      <guid isPermaLink="false">claude-digest-2026-09-02</guid>
+      <pubDate>Tue, 02 Sep 2026 07:00:00 -0400</pubDate>
+      <description><![CDATA[
+        <h2>🆕 What's New</h2>
+        <p><strong>Claude Code v2.1.258</strong> — Bug fixes and stability improvements.</p>
+        <p><strong>Anthropic — "Developing Enterprise Frontier Safeguards"</strong> — New announcement on enterprise safety tooling for frontier model deployments.</p>
+
+        <h2>📄 Docs Changes</h2>
+        <p>Anthropic SDK beta graduation announced August 27 — the SDK is now stable. Update any <code>beta</code> pins in your dependencies.</p>
+
+        <h2>💡 Tip of the Day</h2>
+        <p><strong>Use CLAUDE.md to set persistent context.</strong> Place a CLAUDE.md file at your repo root with project-specific instructions, coding conventions, and context. Claude Code reads it automatically at the start of every session — no need to re-explain your stack or preferences each time.</p>
+
+        <h2>👀 Have You Seen? — Auto Mode</h2>
+        <p><strong>Auto mode in Claude Code</strong> lets Claude execute multi-step tasks without asking for approval at each step. Great for well-scoped tasks (refactors, test generation, documentation), but scope it carefully — Claude operates with the permissions of your current shell session. Always review irreversible operations before enabling auto mode on production codebases.</p>
+      ]]></description>
+    </item>
+
+  </channel>
+</rss>
