@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- claude-digest-feed | https://apex-integration-lab.github.io/claude-digest-feed/ -->
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Claude Daily Digest</title>
     <link>https://apex-integration-lab.github.io/claude-digest-feed/</link>
@@ -13,7 +15,8 @@
       <link>https://apex-integration-lab.github.io/claude-digest-feed/</link>
       <guid isPermaLink="false">claude-digest-2026-09-02</guid>
       <pubDate>Tue, 02 Sep 2026 16:14:00 GMT</pubDate>
-      <description><![CDATA[
+      <description>Claude Code v2.1.258 bug fixes — Shift+Tab auto-accept tip — Anthropic’s system prompts now public.</description>
+      <content:encoded><![CDATA[
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; max-width: 620px; color: #1e1b4b; line-height: 1.65; font-size: 15px;">
 
   <div style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); color: #fff; border-radius: 10px; padding: 20px 24px; margin-bottom: 24px;">
@@ -49,7 +52,7 @@
   </div>
 
 </div>
-      ]]></description>
+      ]]></content:encoded>
     </item>
 
   </channel>
