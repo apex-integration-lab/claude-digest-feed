@@ -13,18 +13,41 @@
       <guid isPermaLink="false">claude-digest-2026-09-02</guid>
       <pubDate>Tue, 02 Sep 2026 07:00:00 -0400</pubDate>
       <description><![CDATA[
-        <h2>🆕 What's New</h2>
-        <p><strong>Claude Code v2.1.258</strong> — Bug fixes and stability improvements.</p>
-        <p><strong>Anthropic — "Developing Enterprise Frontier Safeguards"</strong> — New announcement on enterprise safety tooling for frontier model deployments.</p>
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; max-width: 620px; color: #1e1b4b; line-height: 1.65; font-size: 15px;">
 
-        <h2>📄 Docs Changes</h2>
-        <p>Anthropic SDK beta graduation announced August 27 — the SDK is now stable. Update any <code>beta</code> pins in your dependencies.</p>
+  <div style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); color: #fff; border-radius: 10px; padding: 20px 24px; margin-bottom: 24px;">
+    <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #a5b4fc; margin-bottom: 6px;">Claude Daily Digest</div>
+    <div style="font-size: 20px; font-weight: 800; line-height: 1.2;">Tuesday, Sep 2, 2026</div>
+  </div>
 
-        <h2>💡 Tip of the Day</h2>
-        <p><strong>Use CLAUDE.md to set persistent context.</strong> Place a CLAUDE.md file at your repo root with project-specific instructions, coding conventions, and context. Claude Code reads it automatically at the start of every session — no need to re-explain your stack or preferences each time.</p>
+  <div style="margin-bottom: 28px;">
+    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #7c3aed; border-left: 3px solid #7c3aed; padding-left: 10px; margin-bottom: 14px;">🆕 What’s New</div>
+    <div style="margin-bottom: 10px; padding: 12px 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+      <strong style="color: #1e293b;">Claude Code v2.1.258</strong> — Bug fixes and stability improvements.
+    </div>
+    <div style="margin-bottom: 10px; padding: 12px 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+      <strong style="color: #1e293b;">Anthropic — “Developing Enterprise Frontier Safeguards”</strong> — New announcement on enterprise safety tooling for frontier model deployments.
+    </div>
+  </div>
 
-        <h2>👀 Have You Seen? — Auto Mode</h2>
-        <p><strong>Auto mode in Claude Code</strong> lets Claude execute multi-step tasks without asking for approval at each step. Great for well-scoped tasks (refactors, test generation, documentation), but scope it carefully — Claude operates with the permissions of your current shell session. Always review irreversible operations before enabling auto mode on production codebases.</p>
+  <div style="margin-bottom: 28px;">
+    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #0891b2; border-left: 3px solid #06b6d4; padding-left: 10px; margin-bottom: 14px;">📄 Docs Changes</div>
+    <div style="margin-bottom: 10px; padding: 12px 16px; background: #f0fdfa; border-radius: 8px; border: 1px solid #ccfbf1;">
+      <strong style="color: #134e4a;">Anthropic SDK beta graduation</strong> — Announced August 27 — the SDK is now stable. Update any <code style="background: #e2e8f0; padding: 1px 5px; border-radius: 3px; font-size: 13px;">beta</code> pins in your dependencies.
+    </div>
+  </div>
+
+  <div style="margin-bottom: 28px; background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 10px; padding: 18px 22px;">
+    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #7c3aed; margin-bottom: 10px;">💡 Tip of the Day</div>
+    <p style="margin: 0;"><strong style="color: #4c1d95;">Use CLAUDE.md to set persistent context.</strong> Place a CLAUDE.md file at your repo root with project-specific instructions, coding conventions, and context. Claude Code reads it automatically at the start of every session — no need to re-explain your stack or preferences each time.</p>
+  </div>
+
+  <div style="margin-bottom: 28px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 18px 22px;">
+    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #1d4ed8; margin-bottom: 10px;">👀 Have You Seen? — Auto Mode</div>
+    <p style="margin: 0;"><strong style="color: #1e3a5f;">Auto mode in Claude Code</strong> lets Claude execute multi-step tasks without asking for approval at each step. Great for well-scoped tasks (refactors, test generation, documentation), but scope it carefully — Claude operates with the permissions of your current shell session. Always review irreversible operations before enabling auto mode on production codebases.</p>
+  </div>
+
+</div>
       ]]></description>
     </item>
 
