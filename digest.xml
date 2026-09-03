@@ -11,6 +11,47 @@
     <atom:link href="https://apex-integration-lab.github.io/claude-digest-feed/digest.xml" rel="self" type="application/rss+xml"/>
 
     <item>
+      <title>Claude Daily Digest — Thu, Sep 3</title>
+      <link>https://apex-integration-lab.github.io/claude-digest-feed/</link>
+      <guid isPermaLink="false">claude-digest-2026-09-03</guid>
+      <pubDate>Thu, 03 Sep 2026 11:00:00 +0000</pubDate>
+      <description>Claude Code v2.1.259 lands with org-level MCP server policy and a concurrent session corruption fix; SDK Files/Skills APIs graduate out of beta; /compact tip; prompt caching feature spotlight.</description>
+      <content:encoded><![CDATA[
+<!DOCTYPE html><html><body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333;">
+
+<h2 style="color: #c44; border-bottom: 2px solid #eee; padding-bottom: 8px;">Claude Daily Digest &mdash; Thu, Sep 3</h2>
+
+<h3 style="color: #555;">📦 What's New</h3>
+<p><strong>Claude Code v2.1.259</strong> dropped last night:</p>
+<ul>
+  <li><strong>managedMcpServers</strong> &mdash; Organizations can push HTTP/SSE MCP servers to all users via policy (same shape as <code>.mcp.json</code>). The enterprise path for giving every engineer access to shared internal tools without per-user setup.</li>
+  <li><strong>Concurrent session fix</strong> &mdash; Running multiple Claude Code sessions in parallel was silently corrupting <code>~/.claude.json</code>, resetting workspace trust and losing MCP state. Now fixed &mdash; parallel tmux/terminal workflows are safe.</li>
+  <li>Also: <code>--permission-prompts none</code> for headless CI runners, GitLab MR badge support (<code>glab mr</code> commands), improved Bash sandboxing for deny rules.</li>
+</ul>
+<p style="color:#888; font-size:0.9em;">No new Anthropic blog posts in the last 24h.</p>
+
+<h3 style="color: #555;">📄 Docs Changes</h3>
+<p><strong>Aug 27 SDK update</strong> (Python 1.2.0 / TypeScript 0.122.0):</p>
+<ul>
+  <li><code>client.beta.files</code> and <code>client.beta.skills</code> graduated out of beta &mdash; same shapes as <code>client.files</code> / <code>client.skills</code>, no beta headers. Note: <code>beta.skills.delete()</code> now deletes a Skill <em>and all its versions</em>. See migration guides.</li>
+  <li><strong>Personal and service account keys</strong> now available in the Claude Console for better permission tracking.</li>
+</ul>
+
+<h3 style="color: #555;">💡 Tip of the Day</h3>
+<p><strong>#4 &mdash; /compact saves your session</strong></p>
+<p>When context gets long, <code>/compact</code> compresses it into a summary and continues seamlessly. Lets you work for hours on a hard problem without hitting limits &mdash; instead of starting over, Claude summarizes what happened and picks up right where you left off.</p>
+
+<h3 style="color: #555;">👀 Have You Seen?</h3>
+<p><strong>Prompt Caching</strong></p>
+<p>If you have a large, stable context &mdash; a long system prompt, a codebase snapshot, a reference document &mdash; Anthropic's prompt caching stores it between API calls. Subsequent requests referencing the cached content cost roughly <strong>10% of normal price</strong>. For high-volume production use or repeated queries against the same docs, this is the highest-leverage cost optimization in the API.</p>
+
+<hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
+<p style="color: #bbb; font-size: 0.8em;">Claude Daily Digest &middot; Sent by Mikey &middot; engineers on the team</p>
+</body></html>
+      ]]></content:encoded>
+    </item>
+
+    <item>
       <title>Claude Daily Digest — Tuesday, Sep 2, 2026</title>
       <link>https://apex-integration-lab.github.io/claude-digest-feed/</link>
       <guid isPermaLink="false">claude-digest-2026-09-02</guid>
