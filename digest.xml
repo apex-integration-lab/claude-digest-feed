@@ -11,13 +11,38 @@
     <atom:link href="https://apex-integration-lab.github.io/claude-digest-feed/digest.xml" rel="self" type="application/rss+xml"/>
 
     <item>
+      <title>Claude Daily Digest &#x2014; Sun, Sep 6</title>
+      <link>https://apex-integration-lab.github.io/claude-digest-feed/</link>
+      <guid isPermaLink="false">claude-digest-2026-09-06</guid>
+      <pubDate>Sun, 06 Sep 2026 11:00:00 -0400</pubDate>
+      <description>Claude Code v2.1.263 lands overnight; ant apply IaC command ships; multi-file refactor tip; Batch API at 50% cost.</description>
+      <content:encoded><![CDATA[
+<h2 style="color: #b03a2e; border-bottom: 2px solid #b03a2e; padding-bottom: 8px;">Claude Daily Digest &#x2014; Sun, Sep 6</h2>
+
+<h3 style="color: #2c3e50;">&#x1f195; What&#x27;s New</h3>
+<p><strong>Claude Code v2.1.263</strong> shipped overnight (Sep 6, ~3am UTC). No detailed changelog captured yet &#x2014; check the <a href="https://github.com/anthropics/claude-code/releases">releases page</a> for specifics.</p>
+<p>No new Anthropic blog posts in the last 24 hours. Most recent: <em>Developing Enterprise Frontier Safeguards with our customers</em> (Sep 1).</p>
+
+<h3 style="color: #2c3e50;">&#x1f4c4; Docs Changes</h3>
+<p><strong>Sep 3 &#x2014;</strong> <code>ant apply</code> added to CLI v1.30.0. Manages agents, environments, skills, memory stores, and deployments as code; generates a <code>claude-lock.json</code> lockfile for reproducible infrastructure.</p>
+<p><strong>Sep 1 &#x2014;</strong> <strong>Claude Fable 5.1 + Mythos 5.1</strong> launched. 1M token context window, always-on adaptive thinking, same pricing ($10/$50/MTok), cache reads at $0.25/MTok. Betas: per-message effort control, turn-scoped system messages, text watermark + C2PA support.</p>
+
+<h3 style="color: #2c3e50;">&#x1f4a1; Tip of the Day #8 &#x2014; Multi-file refactors</h3>
+<p>Claude Code can span changes across dozens of files in one shot. Give it a clear goal &#x2014; <em>&ldquo;rename this interface and update all callers&rdquo;</em> &#x2014; rather than directing it file-by-file. It reads the full dependency graph and applies changes consistently, saving the mechanical work of tracking down every reference yourself.</p>
+
+<h3 style="color: #2c3e50;">&#x1f440; Have You Seen? &#x2014; Batch API</h3>
+<p>The Anthropic Batch API processes high-volume, non-time-sensitive requests asynchronously at <strong>50% reduced cost</strong>. Submit a batch of prompts and poll for results &#x2014; ideal for nightly code analysis jobs, bulk document processing, or generating summaries across large datasets without blocking your main workflow.</p>
+      ]]></content:encoded>
+    </item>
+
+    <item>
       <title>Claude Daily Digest &#x2014; Saturday, Sep 5</title>
       <link>https://apex-integration-lab.github.io/claude-digest-feed/</link>
       <guid isPermaLink="false">claude-digest-2026-09-05</guid>
       <pubDate>Sat, 05 Sep 2026 11:03:00 +0000</pubDate>
       <description>No new Claude Code release; /cost context tip; Files API spotlight.</description>
       <content:encoded><![CDATA[
-<!DOCTYPE html><html><head><meta charset="utf-8"><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:600px;margin:0 auto;padding:20px;color:#1a1a1a}h1{font-size:20px;font-weight:700;margin-bottom:4px}.date{color:#666;font-size:14px;margin-bottom:24px}h2{font-size:15px;font-weight:600;color:#333;border-bottom:1px solid #e5e5e5;padding-bottom:6px;margin-top:24px}.release{color:#888;font-weight:normal;font-size:13px}ul{padding-left:20px}li{margin-bottom:6px;font-size:14px;line-height:1.5}.tip-box{background:#f5f5f5;border-left:3px solid #333;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0}.seen-box{background:#f0f7ff;border-left:3px solid #3b82f6;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0}code{background:#eee;padding:2px 5px;border-radius:3px;font-family:'SF Mono',monospace;font-size:12px}a{color:#2563eb}.footer{margin-top:32px;font-size:12px;color:#999;border-top:1px solid #e5e5e5;padding-top:12px}</style></head><body><h1>Claude Daily Digest</h1><div class="date">Saturday, September 5, 2026</div><h2>What's New</h2><p style="font-size:13px;color:#555;margin:0 0 8px">No new release today. <span class="release">&mdash; last: v2.1.261 (Sep 4)</span></p><ul><li><code>/skill-doctor</code> &mdash; diagnoses and repairs broken skill configurations</li><li><code>bashOutputMaxChars</code> / <code>taskOutputMaxChars</code> &mdash; configurable output limits up to 128K characters</li><li><code>--append-subagent-system-prompt-file</code> &mdash; inject custom instructions into every subagent spawned in a workflow run</li></ul><h2>Docs Changes</h2><p style="font-size:14px"><strong>ant CLI v1.30.0</strong> &mdash; <code>ant apply</code> creates or updates agents, environments, and skills from repo-local definition files. IaC for your Claude Code setup.</p><p style="font-size:14px"><strong>Fable 5.1 / Mythos 5.1</strong> &mdash; 1M context window, 128K output, adaptive thinking now GA.</p><h2>Tip of the Day</h2><div class="tip-box"><strong>#7 &mdash; <code>/cost</code> shows your context usage</strong> &mdash; A quick way to see how full your context window is. If you're close, it's a signal to <code>/compact</code> (compress and continue) or <code>/clear</code> (start fresh).</div><h2>Have You Seen?</h2><div class="seen-box"><strong>Files API</strong> &mdash; Upload a file once, get a stable file ID back, then reference it across multiple API calls without re-uploading. Great for large PDFs, codebases, or datasets you query repeatedly.</div><div class="footer">Claude Daily Digest &middot; Mikey &middot; <a href="https://apex-integration-lab.github.io/claude-digest-feed/digest.xml">RSS Feed</a></div></body></html>
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI'\sans-serif;max-width:600px;margin:0 auto;padding:20px;color:#1a1a1a}h1{font-size:20px;font-weight:700;margin-bottom:4px}.date{color:#666;font-size:14px;margin-bottom:24px}h2{font-size:15px;font-weight:600;color:#333;border-bottom:1px solid #e5e5e5;padding-bottom:6px;margin-top:24px}.release{color:#888;font-weight:normal;font-size:13px}ul{padding-left:20px}li{margin-bottom:6px;font-size:14px;line-height:1.5}.tip-box{background:#f5f5f5;border-left:3px solid #333;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0}.seen-box{background:#f0f7ff;border-left:3px solid #3b82f6;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0}code{background:#eee;padding:2px 5px;border-radius:3px;font-family:'SF Mono',monospace;font-size:12px}a{color:#2563eb}.footer{margin-top:32px;font-size:12px;color:#999;border-top:1px solid #e5e5e5;padding-top:12px}</style></head><body><h1>Claude Daily Digest</h1><div class="date">Saturday, September 5, 2026</div><h2>What's New</h2><p style="font-size:13px;color:#555;margin:0 0 8px">No new release today. <span class="release">&mdash; last: v2.1.261 (Sep 4)</span></p><ul><li><code>/skill-doctor</code> &mdash; diagnoses and repairs broken skill configurations</li><li><code>bashOutputMaxChars</code> / <code>taskOutputMaxChars</code> &mdash; configurable output limits up to 128K characters</li><li><code>--append-subagent-system-prompt-file</code> &mdash; inject custom instructions into every subagent spawned in a workflow run</li></ul><h2>Docs Changes</h2><p style="font-size:14px"><strong>ant CLI v1.30.0</strong> &mdash; <code>ant apply</code> creates or updates agents, environments, and skills from repo-local definition files. IaC for your Claude Code setup.</p><p style="font-size:14px"><strong>Fable 5.1 / Mythos 5.1</strong> &mdash; 1M context window, 128K output, adaptive thinking now GA.</p><h2>Tip of the Day</h2><div class="tip-box"><strong>#7 &mdash; <code>/cost</code> shows your context usage</strong> &mdash; A quick way to see how full your context window is. If you're close, it's a signal to <code>/compact</code> (compress and continue) or <code>/clear</code> (start fresh).</div><h2>Have You Seen?</h2><div class="seen-box"><strong>Files API</strong> &mdash; Upload a file once, get a stable file ID back, then reference it across multiple API calls without re-uploading. Great for large PDFs, codebases, or datasets you query repeatedly.</div><div class="footer">Claude Daily Digest &middot; Mikey &middot; <a href="https://apex-integration-lab.github.io/claude-digest-feed/digest.xml">RSS Feed</a></div></body></html>
       ]]></content:encoded>
     </item>
 
@@ -47,7 +72,7 @@
 <ul>
   <li><strong>managedMcpServers</strong> &#x2014; Organizations can push HTTP/SSE MCP servers to all users via policy (same shape as <code>.mcp.json</code>). The enterprise path for giving every engineer access to shared internal tools without per-user setup.</li>
   <li><strong>Concurrent session fix</strong> &#x2014; Running multiple Claude Code sessions in parallel was silently corrupting <code>~/.claude.json</code>, resetting workspace trust and losing MCP state. Now fixed &#x2014; parallel tmux/terminal workflows are safe.</li>
-  <li>Also: <code>--permission-prompts none</code> for headless CI runners, GitLab MR badge support (<code>glab mr</code> commands), improved Bash sandboxing for deny rules.</li>
+  <li>Also: <code>--permission-prompts none</code> for Headless CI runners, GitLab MR badge support (<code>glab mr</code> commands), improved Bash sandboxing for deny rules.</li>
 </ul>
 <p style="color:#888; font-size:0.9em;">No new Anthropic blog posts in the last 24h.</p>
 </body></html>
