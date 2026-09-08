@@ -11,6 +11,57 @@
     <atom:link href="https://apex-integration-lab.github.io/claude-digest-feed/digest.xml" rel="self" type="application/rss+xml"/>
 
     <item>
+      <title>Claude Daily Digest &#x2014; Tuesday, Sep 8</title>
+      <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-08.html</link>
+      <guid isPermaLink="false">claude-digest-2026-09-08</guid>
+      <pubDate>Tue, 08 Sep 2026 11:00:00 -0400</pubDate>
+      <description>No new release (v2.1.263 holds); Fable 5.1 lands on Bedrock; custom slash commands tip; vision support spotlight.</description>
+      <content:encoded><![CDATA[
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; max-width: 640px; margin: 0 auto; color: #1a1a1a; font-size: 15px; line-height: 1.6;">
+
+<div style="background: #f5f0ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin-bottom: 28px; border-radius: 0 6px 6px 0;">
+<span style="font-weight: 600; color: #7c3aed; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">Claude Daily Digest</span><br>
+<span style="font-size: 22px; font-weight: 700; color: #1a1a1a;">Tuesday, Sep 8</span>
+</div>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">What's New</h2>
+
+<p>No new Claude Code release today. Latest is <strong>v2.1.263</strong> (September 6). Stable day on the release front.</p>
+
+<p style="margin-top: 12px;"><strong>Claude Fable 5.1 on Amazon Bedrock</strong> &#x2014; now generally available. Worth evaluating for complex reasoning tasks where Sonnet hits its ceiling. Existing IAM and VPC configurations apply &#x2014; no new integration work needed.</p>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Tip of the Day &#x2014; #10: Custom slash commands</h2>
+
+<p>Create <code style="background: #f3f4f6; padding: 2px 5px; border-radius: 3px; font-size: 13px;">.claude/commands/your-command.md</code> in your repo and it becomes a <code style="background: #f3f4f6; padding: 2px 5px; border-radius: 3px; font-size: 13px;">/your-command</code> you can call in any Claude Code session.</p>
+
+<p>The file&#x27;s content becomes the prompt. Check it in with the repo and every engineer on the team gets the same command &#x2014; no manual setup, no drift.</p>
+
+<ul style="margin: 12px 0; padding-left: 20px; color: #374151;">
+<li><code style="background: #f3f4f6; padding: 1px 4px; border-radius: 3px; font-size: 13px;">/security-review</code> &#x2014; run your standard security checklist against the current diff</li>
+<li><code style="background: #f3f4f6; padding: 1px 4px; border-radius: 3px; font-size: 13px;">/generate-tests</code> &#x2014; generate unit tests for the last-modified file</li>
+<li><code style="background: #f3f4f6; padding: 1px 4px; border-radius: 3px; font-size: 13px;">/summarize-pr</code> &#x2014; draft a PR description from the current branch diff</li>
+</ul>
+
+<p>Also available in the <strong>Claude Code IDE extensions</strong> (VS Code, JetBrains) via the command palette.</p>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Have You Seen? &#x2014; #10: Vision support</h2>
+
+<p>Claude Code reads images. Paste a screenshot into the prompt, drag in a file, or reference a path &#x2014; Claude analyzes it directly.</p>
+
+<ul style="margin: 12px 0; padding-left: 20px; color: #374151;">
+<li><strong>UI debugging:</strong> screenshot the broken component &#x2014; Claude identifies the CSS/layout issue</li>
+<li><strong>Architecture review:</strong> drop in a diagram &#x2014; Claude reads it and gives feedback or generates code from it</li>
+<li><strong>Error triage:</strong> screenshot an obscure error &#x2014; Claude identifies the root cause faster than copying log text</li>
+<li><strong>Design-to-code:</strong> share a mockup &#x2014; Claude generates a component skeleton</li>
+</ul>
+
+<p>Pair with <code style="background: #f3f4f6; padding: 2px 5px; border-radius: 3px; font-size: 13px;">claude --print</code> and a screenshot tool in CI for automated visual regression checks.</p>
+
+</div>
+      ]]></content:encoded>
+    </item>
+
+    <item>
       <title>Claude Daily Digest &#x2014; Mon, Sep 7</title>
       <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-07.html</link>
       <guid isPermaLink="false">claude-digest-2026-09-07</guid>
