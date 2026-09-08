@@ -11,6 +11,54 @@
     <atom:link href="https://apex-integration-lab.github.io/claude-digest-feed/digest.xml" rel="self" type="application/rss+xml"/>
 
     <item>
+      <title>Claude Daily Digest &#x2014; Mon, Sep 7</title>
+      <link>https://apex-integration-lab.github.io/claude-digest-feed/</link>
+      <guid isPermaLink="false">claude-digest-2026-09-07</guid>
+      <pubDate>Mon, 07 Sep 2026 11:00:00 -0400</pubDate>
+      <description>No new Claude Code releases; ant CLI 1.30.0 lands ant apply (Terraform for Claude infra); CI tip: claude --print; /review command spotlight.</description>
+      <content:encoded><![CDATA[
+<!DOCTYPE html><html><body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; color: #1a1a1a; background: #fff;">
+
+<h2 style="margin: 0 0 4px; font-size: 20px; color: #1a1a1a;">Claude Daily Digest</h2>
+<p style="margin: 0 0 28px; color: #666; font-size: 14px;">Monday, September 7, 2026</p>
+
+<table width="100%" cellpadding="0" cellspacing="0" style="border-top: 3px solid #d97706; margin-bottom: 28px;">
+  <tr><td style="padding: 16px 0 0;">
+    <h3 style="margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: #d97706;">&#x1f195; What&#x2019;s New</h3>
+    <p style="margin: 0; font-size: 15px; line-height: 1.6;">No major updates today. The most recent Claude Code release is <strong>v2.1.263</strong> (September 6) &#x2014; check the <a href="https://github.com/anthropics/claude-code/releases" style="color: #2563eb;">GitHub releases page</a> for changelog details.</p>
+  </td></tr>
+</table>
+
+<table width="100%" cellpadding="0" cellspacing="0" style="border-top: 3px solid #7c3aed; margin-bottom: 28px;">
+  <tr><td style="padding: 16px 0 0;">
+    <h3 style="margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: #7c3aed;">&#x1f4c4; Docs Changes</h3>
+    <p style="margin: 0 0 8px; font-size: 15px; line-height: 1.6;"><strong>September 3 &#x2014; <code>ant</code> CLI v1.30.0 adds <code>ant apply</code></strong></p>
+    <p style="margin: 0; font-size: 15px; line-height: 1.6;">The <code>ant apply</code> command lets you manage agents, environments, skills, memory stores, and deployments from config files in your repo. Describe each resource in a file, run <code>ant apply</code>, and it prints a plan for approval. The resulting <code>claude-lock.json</code> lockfile ensures CI and teammates update the same resources &#x2014; no drift. Think Terraform, but for Claude infrastructure.</p>
+  </td></tr>
+</table>
+
+<table width="100%" cellpadding="0" cellspacing="0" style="border-top: 3px solid #059669; margin-bottom: 28px;">
+  <tr><td style="padding: 16px 0 0;">
+    <h3 style="margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: #059669;">&#x1f4a1; Tip of the Day</h3>
+    <p style="margin: 0 0 6px; font-size: 15px;"><strong>Claude Code in CI</strong></p>
+    <p style="margin: 0; font-size: 15px; line-height: 1.6;">Run <code>claude --print</code> non-interactively in scripts and CI pipelines. Useful for automated code review, doc generation, or changelog drafting on each PR &#x2014; no human in the loop required. Pair it with <code>--output-format json</code> if you need structured output downstream.</p>
+  </td></tr>
+</table>
+
+<table width="100%" cellpadding="0" cellspacing="0" style="border-top: 3px solid #2563eb; margin-bottom: 16px;">
+  <tr><td style="padding: 16px 0 0;">
+    <h3 style="margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: #2563eb;">&#x1f440; Have You Seen?</h3>
+    <p style="margin: 0 0 6px; font-size: 15px;"><strong>Claude Code <code>/review</code> command</strong></p>
+    <p style="margin: 0; font-size: 15px; line-height: 1.6;">Claude Code has a built-in PR review command. Run <code>/review</code> on an open diff and Claude reads the changes, flags bugs and simplification opportunities, and can post inline GitHub comments &#x2014; no third-party code review tool needed. It&#x2019;s aware of your repo context (CLAUDE.md, recent history) so the feedback is specific, not generic.</p>
+  </td></tr>
+</table>
+
+<p style="margin: 24px 0 0; font-size: 12px; color: #999;">Sent by Mikey</p>
+</body></html>
+      ]]></content:encoded>
+    </item>
+
+    <item>
       <title>Claude Daily Digest &#x2014; Sun, Sep 6</title>
       <link>https://apex-integration-lab.github.io/claude-digest-feed/</link>
       <guid isPermaLink="false">claude-digest-2026-09-06</guid>
