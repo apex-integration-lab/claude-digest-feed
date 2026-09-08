@@ -12,7 +12,7 @@
 
     <item>
       <title>Claude Daily Digest &#x2014; Mon, Sep 7</title>
-      <link>https://apex-integration-lab.github.io/claude-digest-feed/</link>
+      <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-07.html</link>
       <guid isPermaLink="false">claude-digest-2026-09-07</guid>
       <pubDate>Mon, 07 Sep 2026 11:00:00 -0400</pubDate>
       <description>No new Claude Code releases; ant CLI 1.30.0 lands ant apply (Terraform for Claude infra); CI tip: claude --print; /review command spotlight.</description>
@@ -60,7 +60,7 @@
 
     <item>
       <title>Claude Daily Digest &#x2014; Sun, Sep 6</title>
-      <link>https://apex-integration-lab.github.io/claude-digest-feed/</link>
+      <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-06.html</link>
       <guid isPermaLink="false">claude-digest-2026-09-06</guid>
       <pubDate>Sun, 06 Sep 2026 11:00:00 -0400</pubDate>
       <description>Claude Code v2.1.263 lands overnight; ant apply IaC command ships; multi-file refactor tip; Batch API at 50% cost.</description>
@@ -85,19 +85,18 @@
 
     <item>
       <title>Claude Daily Digest &#x2014; Saturday, Sep 5</title>
-      <link>https://apex-integration-lab.github.io/claude-digest-feed/</link>
+      <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-05.html</link>
       <guid isPermaLink="false">claude-digest-2026-09-05</guid>
       <pubDate>Sat, 05 Sep 2026 11:03:00 +0000</pubDate>
       <description>No new Claude Code release; /cost context tip; Files API spotlight.</description>
       <content:encoded><![CDATA[
-<!DOCTYPE html><html><head><meta charset="utf-8"><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI'\sans-serif;max-width:600px;margin:0 auto;padding:20px;color:#1a1a1a}h1{font-size:20px;font-weight:700;margin-bottom:4px}.date{color:#666;font-size:14px;margin-bottom:24px}h2{font-size:15px;font-weight:600;color:#333;border-bottom:1px solid #e5e5e5;padding-bottom:6px;margin-top:24px}.release{color:#888;font-weight:normal;font-size:13px}ul{padding-left:20px}li{margin-bottom:6px;font-size:14px;line-height:1.5}.tip-box{background:#f5f5f5;border-left:3px solid #333;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0}.seen-box{background:#f0f7ff;border-left:3px solid #3b82f6;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0}code{background:#eee;padding:2px 5px;border-radius:3px;font-family:'SF Mono',monospace;font-size:12px}a{color:#2563eb}.footer{margin-top:32px;font-size:12px;color:#999;border-top:1px solid #e5e5e5;padding-top:12px}</style></head><body><h1>Claude Daily Digest</h1><div class="date">Saturday, September 5, 2026</div><h2>What's New</h2><p style="font-size:13px;color:#555;margin:0 0 8px">No new release today. <span class="release">&mdash; last: v2.1.261 (Sep 4)</span></p><ul><li><code>/skill-doctor</code> &mdash; diagnoses and repairs broken skill configurations</li><li><code>bashOutputMaxChars</code> / <code>taskOutputMaxChars</code> &mdash; configurable output limits up to 128K characters</li><li><code>--append-subagent-system-prompt-file</code> &mdash; inject custom instructions into every subagent spawned in a workflow run</li></ul><h2>Docs Changes</h2><p style="font-size:14px"><strong>ant CLI v1.30.0</strong> &mdash; <code>ant apply</code> creates or updates agents, environments, and skills from repo-local definition files. IaC for your Claude Code setup.</p><p style="font-size:14px"><strong>Fable 5.1 / Mythos 5.1</strong> &mdash; 1M context window, 128K output, adaptive thinking now GA.</p><h2>Tip of the Day</h2><div class="tip-box"><strong>#7 &mdash; <code>/cost</code> shows your context usage</strong> &mdash; A quick way to see how full your context window is. If you're close, it's a signal to <code>/compact</code> (compress and continue) or <code>/clear</code> (start fresh).</div><h2>Have You Seen?</h2><div class="seen-box"><strong>Files API</strong> &mdash; Upload a file once, get a stable file ID back, then reference it across multiple API calls without re-uploading. Great for large PDFs, codebases, or datasets you query repeatedly.</div><div class="footer">Claude Daily Digest &middot; Mikey &middot; <a href="https://apex-integration-lab.github.io/claude-digest-feed/digest.xml">RSS Feed</a></div></body></html>
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:600px;margin:0 auto;padding:20px;color:#1a1a1a}h1{font-size:20px;font-weight:700;margin-bottom:4px}.date{color:#666;font-size:14px;margin-bottom:24px}h2{font-size:15px;font-weight:600;color:#333;border-bottom:1px solid #e5e5e5;padding-bottom:6px;margin-top:24px}.release{color:#888;font-weight:normal;font-size:13px}ul{padding-left:20px}li{margin-bottom:6px;font-size:14px;line-height:1.5}.tip-box{background:#f5f5f5;border-left:3px solid #333;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0}.seen-box{background:#f0f7ff;border-left:3px solid #3b82f6;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0}code{background:#eee;padding:2px 5px;border-radius:3px;font-family:'SF Mono',monospace;font-size:12px}a{color:#2563eb}.footer{margin-top:32px;font-size:12px;color:#999;border-top:1px solid #e5e5e5;padding-top:12px}</style></head><body><h1>Claude Daily Digest</h1><div class="date">Saturday, September 5, 2026</div><h2>What's New</h2><p style="font-size:13px;color:#555;margin:0 0 8px">No new release today. <span class="release">&mdash; last: v2.1.261 (Sep 4)</span></p><ul><li><code>/skill-doctor</code> &mdash; diagnoses and repairs broken skill configurations</li><li><code>bashOutputMaxChars</code> / <code>taskOutputMaxChars</code> &mdash; configurable output limits up to 128K characters</li><li><code>--append-subagent-system-prompt-file</code> &mdash; inject custom instructions into every subagent spawned in a workflow run</li></ul><h2>Docs Changes</h2><p style="font-size:14px"><strong>ant CLI v1.30.0</strong> &mdash; <code>ant apply</code> creates or updates agents, environments, and skills from repo-local definition files. IaC for your Claude Code setup.</p><p style="font-size:14px"><strong>Fable 5.1 / Mythos 5.1</strong> &mdash; 1M context window, 128K output, adaptive thinking now GA.</p><h2>Tip of the Day</h2><div class="tip-box"><strong>#7 &mdash; <code>/cost</code> shows your context usage</strong> &mdash; A quick way to see how full your context window is. If you're close, it's a signal to <code>/compact</code> (compress and continue) or <code>/clear</code> (start fresh).</div><h2>Have You Seen?</h2><div class="seen-box"><strong>Files API</strong> &mdash; Upload a file once, get a stable file ID back, then reference it across multiple API calls without re-uploading. Great for large PDFs, codebases, or datasets you query repeatedly.</div><div class="footer">Claude Daily Digest &middot; Mikey &middot; <a href="https://apex-integration-lab.github.io/claude-digest-feed/digest.xml">RSS Feed</a></div></body></html>
       ]]></content:encoded>
     </item>
 
-
     <item>
       <title>Claude Daily Digest &#x2014; September 4, 2026</title>
-      <link>https://apex-integration-lab.github.io/claude-digest-feed/</link>
+      <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-04.html</link>
       <guid isPermaLink="false">claude-digest-2026-09-04</guid>
       <pubDate>Thu, 04 Sep 2026 11:00:00 -0400</pubDate>
       <description>Claude Code v2.1.261 lands /skill-doctor and 128K output limits; ant CLI v1.30.0 introduces ant apply for IaC; screenshot debugging tip and IDE extensions spotlight.</description>
@@ -108,7 +107,7 @@
 
     <item>
       <title>Claude Daily Digest &#x2014; Thu, Sep 3</title>
-      <link>https://apex-integration-lab.github.io/claude-digest-feed/</link>
+      <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-03.html</link>
       <guid isPermaLink="false">claude-digest-2026-09-03</guid>
       <pubDate>Thu, 03 Sep 2026 11:00:00 +0000</pubDate>
       <description>Claude Code v2.1.259 lands with org-level MCP server policy and a concurrent session corruption fix; SDK Files/Skills APIs graduate out of beta; /compact tip; prompt caching feature spotlight.</description>
@@ -128,7 +127,7 @@
     </item>
     <item>
       <title>Claude Daily Digest &#x2014; Tuesday, Sep 2, 2026</title>
-      <link>https://apex-integration-lab.github.io/claude-digest-feed/</link>
+      <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-02.html</link>
       <guid isPermaLink="false">claude-digest-2026-09-02</guid>
       <pubDate>Tue, 02 Sep 2026 16:14:00 GMT</pubDate>
       <description>Claude Code v2.1.258 bug fixes &#x2014; Shift+Tab auto-accept tip &#x2014; Anthropic's system prompts now public.</description>

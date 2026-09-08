@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude Daily Digest — Sun, Sep 6</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 0 auto; padding: 24px 16px; }
+    .back { font-size: 13px; color: #666; margin-bottom: 24px; }
+    .back a { color: #2563eb; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="back"><a href="../">← All digests</a></div>
+  <h2 style="color: #b03a2e; border-bottom: 2px solid #b03a2e; padding-bottom: 8px;">Claude Daily Digest &#x2014; Sun, Sep 6</h2>
+
+<h3 style="color: #2c3e50;">&#x1f195; What&#x27;s New</h3>
+<p><strong>Claude Code v2.1.263</strong> shipped overnight (Sep 6, ~3am UTC). No detailed changelog captured yet &#x2014; check the <a href="https://github.com/anthropics/claude-code/releases">releases page</a> for specifics.</p>
+<p>No new Anthropic blog posts in the last 24 hours. Most recent: <em>Developing Enterprise Frontier Safeguards with our customers</em> (Sep 1).</p>
+
+<h3 style="color: #2c3e50;">&#x1f4c4; Docs Changes</h3>
+<p><strong>Sep 3 &#x2014;</strong> <code>ant apply</code> added to CLI v1.30.0. Manages agents, environments, skills, memory stores, and deployments as code; generates a <code>claude-lock.json</code> lockfile for reproducible infrastructure.</p>
+<p><strong>Sep 1 &#x2014;</strong> <strong>Claude Fable 5.1 + Mythos 5.1</strong> launched. 1M token context window, always-on adaptive thinking, same pricing ($10/$50/MTok), cache reads at $0.25/MTok. Betas: per-message effort control, turn-scoped system messages, text watermark + C2PA support.</p>
+
+<h3 style="color: #2c3e50;">&#x1f4a1; Tip of the Day #8 &#x2014; Multi-file refactors</h3>
+<p>Claude Code can span changes across dozens of files in one shot. Give it a clear goal &#x2014; <em>&ldquo;rename this interface and update all callers&rdquo;</em> &#x2014; rather than directing it file-by-file. It reads the full dependency graph and applies changes consistently, saving the mechanical work of tracking down every reference yourself.</p>
+
+<h3 style="color: #2c3e50;">&#x1f440; Have You Seen? &#x2014; Batch API</h3>
+<p>The Anthropic Batch API processes high-volume, non-time-sensitive requests asynchronously at <strong>50% reduced cost</strong>. Submit a batch of prompts and poll for results &#x2014; ideal for nightly code analysis jobs, bulk document processing, or generating summaries across large datasets without blocking your main workflow.</p>
+  <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

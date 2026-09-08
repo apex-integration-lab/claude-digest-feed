@@ -1,299 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Claude Digest Feed</title>
-  <link rel="alternate" type="application/rss+xml" title="Claude Digest" href="./digest.xml" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude Daily Digest</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:        #07071a;
-      --surface:   #0f0f2a;
-      --border:    rgba(124, 58, 237, 0.2);
-      --purple:    #7c3aed;
-      --teal:      #06b6d4;
-      --pink:      #a855f7;
-      --text:      #e2e8f0;
-      --muted:     #94a3b8;
-      --code-bg:   #1e1e3a;
-    }
-
-    html, body {
-      min-height: 100%;
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-      line-height: 1.6;
-    }
-
-    body::before, body::after {
-      content: "";
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.18;
-      animation: drift 12s ease-in-out infinite alternate;
-      pointer-events: none;
-      z-index: 0;
-    }
-    body::before {
-      width: 600px; height: 600px;
-      background: var(--purple);
-      top: -150px; left: -150px;
-    }
-    body::after {
-      width: 500px; height: 500px;
-      background: var(--teal);
-      bottom: -100px; right: -100px;
-      animation-delay: -6s;
-    }
-    @keyframes drift {
-      from { transform: translate(0, 0) scale(1); }
-      to   { transform: translate(40px, 30px) scale(1.08); }
-    }
-
-    .page {
-      position: relative;
-      z-index: 1;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 80px 24px 120px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 12px;
-      border-radius: 99px;
-      background: rgba(124, 58, 237, 0.15);
-      border: 1px solid rgba(124, 58, 237, 0.35);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--pink);
-      margin-bottom: 28px;
-    }
-    .badge-dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--teal);
-      box-shadow: 0 0 8px var(--teal);
-      animation: pulse 2s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0.4; }
-    }
-
-    h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 16px;
-      background: linear-gradient(135deg, #fff 30%, var(--pink) 70%, var(--teal) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .tagline {
-      font-size: 1.15rem;
-      color: var(--muted);
-      max-width: 520px;
-      margin-bottom: 56px;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px 32px;
-      margin-bottom: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(124,58,237,0.05) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .card-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 12px;
-    }
-
-    .feed-url-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .feed-url-box {
-      flex: 1;
-      background: var(--code-bg);
-      border: 1px solid rgba(6,182,212,0.2);
-      border-radius: 10px;
-      padding: 12px 16px;
-      font-family: "SF Mono", "Fira Code", monospace;
-      font-size: 0.88rem;
-      color: var(--teal);
-      word-break: break-all;
-      user-select: all;
-    }
-    .copy-btn {
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 10px 18px;
-      border-radius: 10px;
-      border: 1px solid rgba(124,58,237,0.4);
-      background: rgba(124,58,237,0.12);
-      color: var(--pink);
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.15s;
-      white-space: nowrap;
-    }
-    .copy-btn:hover { background: rgba(124,58,237,0.22); border-color: rgba(124,58,237,0.6); }
-    .copy-btn.copied { color: var(--teal); border-color: rgba(6,182,212,0.5); background: rgba(6,182,212,0.1); }
-
-    .slack-cmd {
-      display: inline-block;
-      background: var(--code-bg);
-      border: 1px solid rgba(124,58,237,0.2);
-      border-radius: 8px;
-      padding: 8px 14px;
-      font-family: "SF Mono", "Fira Code", monospace;
-      font-size: 0.85rem;
-      color: var(--pink);
-      margin-top: 8px;
-    }
-    .slack-note {
-      margin-top: 10px;
-      font-size: 0.875rem;
-      color: var(--muted);
-    }
-
-    .preview-entry {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .preview-date {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-    }
-    .preview-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.35;
-    }
-    .preview-excerpt {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-    .preview-tag {
-      display: inline-block;
-      padding: 3px 10px;
-      border-radius: 99px;
-      background: rgba(124,58,237,0.15);
-      border: 1px solid rgba(124,58,237,0.3);
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--pink);
-      width: fit-content;
-    }
-
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--purple), var(--teal), transparent);
-      opacity: 0.35;
-      margin: 40px 0;
-    }
-
-    footer {
-      margin-top: 64px;
-      text-align: center;
-      font-size: 0.8rem;
-      color: rgba(148,163,184,0.4);
-    }
-    footer a { color: rgba(168,85,247,0.6); text-decoration: none; }
-    footer a:hover { color: var(--pink); }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 580px; margin: 48px auto; padding: 0 16px; color: #1a1a1a; }
+    h1 { font-size: 22px; font-weight: 700; margin: 0 0 6px; }
+    .sub { color: #666; font-size: 14px; margin: 0 0 36px; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { border-top: 1px solid #e5e5e5; padding: 14px 0; }
+    li:last-child { border-bottom: 1px solid #e5e5e5; }
+    a { color: #2563eb; text-decoration: none; font-size: 15px; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+    .date-label { font-size: 13px; color: #999; margin-top: 3px; }
+    .rss { margin-top: 28px; font-size: 13px; color: #666; }
+    .rss a { color: #2563eb; }
   </style>
 </head>
 <body>
-<div class="page">
-
-  <div class="badge">
-    <span class="badge-dot"></span>
-    RSS &middot; Updated daily
-  </div>
-
-  <h1>Claude Digest</h1>
-  <p class="tagline">A daily AI intelligence brief &mdash; curated highlights from Claude&rsquo;s world, delivered as an RSS feed.</p>
-
-  <div class="card">
-    <div class="card-label">RSS Feed URL</div>
-    <div class="feed-url-row">
-      <div class="feed-url-box" id="feed-url">https://apex-integration-lab.github.io/claude-digest-feed/digest.xml</div>
-      <button class="copy-btn" id="copy-btn" onclick="copyFeed()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-        Copy
-      </button>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-label">Subscribe in Slack</div>
-    <div class="slack-cmd">/feed subscribe https://apex-integration-lab.github.io/claude-digest-feed/digest.xml</div>
-    <p class="slack-note">Paste this into any Slack channel with an RSS app installed (e.g. RSS.app or Slack&rsquo;s built-in feed reader).</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="card">
-    <div class="card-label">Latest Digest</div>
-    <div class="preview-entry">
-      <span class="preview-tag">Sep 2, 2026</span>
-      <div class="preview-title">Claude Daily Digest &mdash; Sep 2, 2026</div>
-      <div class="preview-excerpt">Today&rsquo;s digest covers the latest in AI developments, model updates, and curated insights from the Claude ecosystem. Subscribe to the RSS feed to get every edition automatically.</div>
-    </div>
-  </div>
-
-  <footer>
-    Served via <a href="https://github.com/apex-integration-lab/claude-digest-feed" target="_blank">GitHub Pages</a> &middot; Generated by <a href="https://claude.ai" target="_blank">Claude</a>
-  </footer>
-
-</div>
-<script>
-  function copyFeed() {
-    const url = document.getElementById('feed-url').textContent.trim();
-    const btn = document.getElementById('copy-btn');
-    navigator.clipboard.writeText(url).then(() => {
-      btn.classList.add('copied');
-      btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Copied`;
-      setTimeout(() => {
-        btn.classList.remove('copied');
-        btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy`;
-      }, 2000);
-    });
-  }
-</script>
+  <h1>Claude Daily Digest</h1>
+  <p class="sub">Daily updates on Claude AI — releases, tips, and features.</p>
+  <ul>
+    <li><a href="digests/2026-09-07.html">Claude Daily Digest — Mon, Sep 7</a><div class="date-label">Monday, September 7, 2026</div></li>
+    <li><a href="digests/2026-09-06.html">Claude Daily Digest — Sun, Sep 6</a><div class="date-label">Sunday, September 6, 2026</div></li>
+    <li><a href="digests/2026-09-05.html">Claude Daily Digest — Saturday, Sep 5</a><div class="date-label">Saturday, September 5, 2026</div></li>
+    <li><a href="digests/2026-09-04.html">Claude Daily Digest — September 4, 2026</a><div class="date-label">Thursday, September 4, 2026</div></li>
+    <li><a href="digests/2026-09-03.html">Claude Daily Digest — Thu, Sep 3</a><div class="date-label">Thursday, September 3, 2026</div></li>
+    <li><a href="digests/2026-09-02.html">Claude Daily Digest — Tuesday, Sep 2, 2026</a><div class="date-label">Tuesday, September 2, 2026</div></li>
+  </ul>
+  <p class="rss">Subscribe via <a href="digest.xml">RSS feed</a></p>
+  <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
