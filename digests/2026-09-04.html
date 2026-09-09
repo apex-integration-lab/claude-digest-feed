@@ -8,72 +8,58 @@
     :root {
       --text: #1a1a1a;
       --text-sub: #374151;
-      --text-meta: #555;
       --bg: #ffffff;
       --code-bg: #f3f4f6;
       --border: #e5e7eb;
-      --callout-bg: #f5f0ff;
-      --callout-border: #7c3aed;
-      --callout-label: #7c3aed;
       --link: #2563eb;
       --back-color: #666;
+      --callout-label: #7c3aed;
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --text: #f0f0f0;
         --text-sub: #cbd5e1;
-        --text-meta: #94a3b8;
         --bg: #0f172a;
         --code-bg: #1e293b;
-        --border: #334155;
-        --callout-bg: #1e1b4b;
-        --callout-border: #818cf8;
-        --callout-label: #a5b4fc;
+        --border: #475569;
         --link: #60a5fa;
         --back-color: #94a3b8;
+        --callout-label: #a5b4fc;
       }
     }
-    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 0 auto; padding: 24px 16px; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      background: var(--bg);
+      color: var(--text);
+    }
     .back { font-size: 13px; color: var(--back-color); margin-bottom: 24px; }
     .back a { color: var(--link); text-decoration: none; }
-    /* Override inline-styled elements in digest content */
-    @media (prefers-color-scheme: dark) {
-      body div[style], body p[style], body h2[style], body h3[style],
-      body h4[style], body li[style], body ul[style], body span[style],
-      body strong[style] { color: var(--text) !important; }
-      body code { background: var(--code-bg) !important; color: var(--text) !important; }
-      body div[style*="#f5f0ff"],
-      body div[style*="f5f0ff"] { background: var(--callout-bg) !important; border-color: var(--callout-border) !important; }
-      body div[style*="#f5f0ff"] span,
-      body div[style*="f5f0ff"] span { color: var(--callout-label) !important; }
-      body h2[style*="#e5e7eb"],
-      body h2[style*="e5e7eb"] { border-bottom-color: var(--border) !important; }
-      body ul[style*="#374151"],
-      body ul[style*="374151"] { color: var(--text-sub) !important; }
-      body a { color: var(--link) !important; }
-    }
+    .back a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <div class="back"><a href="../">← All digests</a></div>
   <h1>Claude Daily Digest</h1>
-  <div class="date" style="color:#666;font-size:14px;margin-bottom:24px">Thursday, September 4, 2026</div>
-  <h2 style="font-size:15px;font-weight:600;color:#333;border-bottom:1px solid #e5e5e5;padding-bottom:6px;margin-top:24px">What's New</h2>
-  <p style="font-size:13px;color:#555;margin:0 0 8px"><strong>Claude Code v2.1.261</strong> <span style="color:#888;font-weight:normal;font-size:13px">&#x2014; Sep 4</span></p>
+  <div class="date" style="color:var(--text-sub);font-size:14px;margin-bottom:24px">Thursday, September 4, 2026</div>
+  <h2 style="font-size:15px;font-weight:600;color:inherit;border-bottom:1px solid var(--border);padding-bottom:6px;margin-top:24px">What's New</h2>
+  <p style="font-size:13px;color:var(--text-sub);margin:0 0 8px"><strong>Claude Code v2.1.261</strong> <span style="color:var(--text-sub);font-weight:normal;font-size:13px">&#x2014; Sep 4</span></p>
   <ul style="padding-left:20px">
-    <li style="margin-bottom:6px;font-size:14px;line-height:1.5"><code style="background:#eee;padding:2px 5px;border-radius:3px;font-size:12px">/skill-doctor</code> &#x2b50; &#x2014; diagnoses and repairs broken skill configurations</li>
-    <li style="margin-bottom:6px;font-size:14px;line-height:1.5"><code style="background:#eee;padding:2px 5px;border-radius:3px;font-size:12px">bashOutputMaxChars</code> / <code style="background:#eee;padding:2px 5px;border-radius:3px;font-size:12px">taskOutputMaxChars</code> &#x2b50; &#x2014; configurable output limits up to 128K characters, preventing truncation on large command output</li>
-    <li style="margin-bottom:6px;font-size:14px;line-height:1.5"><code style="background:#eee;padding:2px 5px;border-radius:3px;font-size:12px">--append-subagent-system-prompt-file</code> &#x2b50; &#x2014; inject custom instructions into every subagent spawned in a workflow run</li>
-    <li style="margin-bottom:6px;font-size:14px;line-height:1.5">Org policy visibility in <code style="background:#eee;padding:2px 5px;border-radius:3px;font-size:12px">/status</code> &#x2014; see which policies apply to your session</li>
+    <li style="margin-bottom:6px;font-size:14px;line-height:1.5"><code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">/skill-doctor</code> &#x2b50; &#x2014; diagnoses and repairs broken skill configurations</li>
+    <li style="margin-bottom:6px;font-size:14px;line-height:1.5"><code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">bashOutputMaxChars</code> / <code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">taskOutputMaxChars</code> &#x2b50; &#x2014; configurable output limits up to 128K characters, preventing truncation on large command output</li>
+    <li style="margin-bottom:6px;font-size:14px;line-height:1.5"><code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">--append-subagent-system-prompt-file</code> &#x2b50; &#x2014; inject custom instructions into every subagent spawned in a workflow run</li>
+    <li style="margin-bottom:6px;font-size:14px;line-height:1.5">Org policy visibility in <code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">/status</code> &#x2014; see which policies apply to your session</li>
     <li style="margin-bottom:6px;font-size:14px;line-height:1.5">Bug fixes: fast-input char-drop, Bedrock setup wizard timeout, cloud session plugin sync</li>
   </ul>
-  <h2 style="font-size:15px;font-weight:600;color:#333;border-bottom:1px solid #e5e5e5;padding-bottom:6px;margin-top:24px">Docs <span style="color:#888;font-weight:normal;font-size:13px">&#x2014; Sep 3</span></h2>
-  <p style="font-size:14px"><strong>ant CLI v1.30.0 lands <code style="background:#eee;padding:2px 5px;border-radius:3px;font-size:12px">ant apply</code></strong> &#x2014; creates or updates agents, environments, and skills from repo-local definition files, with a <code style="background:#eee;padding:2px 5px;border-radius:3px;font-size:12px">claude-lock.json</code> lockfile for reproducible deployments. IaC for your Claude Code setup.</p>
-  <h2 style="font-size:15px;font-weight:600;color:#333;border-bottom:1px solid #e5e5e5;padding-bottom:6px;margin-top:24px">Tip of the Day</h2>
+  <h2 style="font-size:15px;font-weight:600;color:inherit;border-bottom:1px solid var(--border);padding-bottom:6px;margin-top:24px">Docs <span style="color:var(--text-sub);font-weight:normal;font-size:13px">&#x2014; Sep 3</span></h2>
+  <p style="font-size:14px"><strong>ant CLI v1.30.0 lands <code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">ant apply</code></strong> &#x2014; creates or updates agents, environments, and skills from repo-local definition files, with a <code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">claude-lock.json</code> lockfile for reproducible deployments. IaC for your Claude Code setup.</p>
+  <h2 style="font-size:15px;font-weight:600;color:inherit;border-bottom:1px solid var(--border);padding-bottom:6px;margin-top:24px">Tip of the Day</h2>
   <div style="background:#f5f5f5;border-left:3px solid #333;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0"><strong>Screenshot debugging</strong> &#x2014; Paste a screenshot directly into Claude Code. It reads images &#x2014; great for UI bugs where &ldquo;it looks wrong&rdquo; is hard to describe in text.</div>
-  <h2 style="font-size:15px;font-weight:600;color:#333;border-bottom:1px solid #e5e5e5;padding-bottom:6px;margin-top:24px">Have You Seen?</h2>
+  <h2 style="font-size:15px;font-weight:600;color:inherit;border-bottom:1px solid var(--border);padding-bottom:6px;margin-top:24px">Have You Seen?</h2>
   <div style="background:#f0f7ff;border-left:3px solid #3b82f6;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0"><strong>Claude Code IDE extensions</strong> &#x2014; VS Code and JetBrains plugins bring Claude Code into your editor. Sidebar access, inline suggestions, diff review &#x2014; no terminal switching required.</div>
-  <div style="margin-top:32px;font-size:12px;color:#999;border-top:1px solid #e5e5e5;padding-top:12px">Claude Daily Digest &middot; Mikey &middot; <a href="https://apex-integration-lab.github.io/claude-digest-feed/digest.xml" style="color:#2563eb">RSS Feed</a></div>
+  <div style="margin-top:32px;font-size:12px;color:var(--text-sub);border-top:1px solid var(--border);padding-top:12px">Claude Daily Digest &middot; Mikey &middot; <a href="https://apex-integration-lab.github.io/claude-digest-feed/digest.xml" style="color:var(--link)">RSS Feed</a></div>
   <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

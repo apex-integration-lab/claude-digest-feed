@@ -8,50 +8,36 @@
     :root {
       --text: #1a1a1a;
       --text-sub: #374151;
-      --text-meta: #555;
       --bg: #ffffff;
       --code-bg: #f3f4f6;
       --border: #e5e7eb;
-      --callout-bg: #f5f0ff;
-      --callout-border: #7c3aed;
-      --callout-label: #7c3aed;
       --link: #2563eb;
       --back-color: #666;
+      --callout-label: #7c3aed;
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --text: #f0f0f0;
         --text-sub: #cbd5e1;
-        --text-meta: #94a3b8;
         --bg: #0f172a;
         --code-bg: #1e293b;
-        --border: #334155;
-        --callout-bg: #1e1b4b;
-        --callout-border: #818cf8;
-        --callout-label: #a5b4fc;
+        --border: #475569;
         --link: #60a5fa;
         --back-color: #94a3b8;
+        --callout-label: #a5b4fc;
       }
     }
-    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 0 auto; padding: 24px 16px; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      background: var(--bg);
+      color: var(--text);
+    }
     .back { font-size: 13px; color: var(--back-color); margin-bottom: 24px; }
     .back a { color: var(--link); text-decoration: none; }
-    /* Override inline-styled elements in digest content */
-    @media (prefers-color-scheme: dark) {
-      body div[style], body p[style], body h2[style], body h3[style],
-      body h4[style], body li[style], body ul[style], body span[style],
-      body strong[style] { color: var(--text) !important; }
-      body code { background: var(--code-bg) !important; color: var(--text) !important; }
-      body div[style*="#f5f0ff"],
-      body div[style*="f5f0ff"] { background: var(--callout-bg) !important; border-color: var(--callout-border) !important; }
-      body div[style*="#f5f0ff"] span,
-      body div[style*="f5f0ff"] span { color: var(--callout-label) !important; }
-      body h2[style*="#e5e7eb"],
-      body h2[style*="e5e7eb"] { border-bottom-color: var(--border) !important; }
-      body ul[style*="#374151"],
-      body ul[style*="374151"] { color: var(--text-sub) !important; }
-      body a { color: var(--link) !important; }
-    }
+    .back a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
