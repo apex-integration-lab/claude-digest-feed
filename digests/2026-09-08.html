@@ -7,24 +7,20 @@
   <style>
     :root {
       --text: #1a1a1a;
-      --text-sub: #374151;
       --bg: #ffffff;
       --code-bg: #f3f4f6;
       --border: #e5e7eb;
       --link: #2563eb;
       --back-color: #666;
-      --callout-label: #7c3aed;
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --text: #f0f0f0;
-        --text-sub: #cbd5e1;
         --bg: #0f172a;
         --code-bg: #1e293b;
         --border: #475569;
         --link: #60a5fa;
         --back-color: #94a3b8;
-        --callout-label: #a5b4fc;
       }
     }
     body {
@@ -38,9 +34,19 @@
     .back { font-size: 13px; color: var(--back-color); margin-bottom: 24px; }
     .back a { color: var(--link); text-decoration: none; }
     .back a:hover { text-decoration: underline; }
-  </style>
+    @media (prefers-color-scheme: dark) {
+      .content, .content * {
+        color: var(--text) !important;
+        border-color: var(--border) !important;
+      }
+      .content code, .content pre {
+        background: var(--code-bg) !important;
+      }
+    }
+</style>
 </head>
 <body>
+<div class="content">
 Claude Daily Digest — Tuesday, Sep 8
 
 What's New
@@ -71,5 +77,6 @@ Claude Code reads images. Paste a screenshot into the prompt, drag in a file, or
 - Design-to-code: share a mockup — Claude generates a component skeleton
 
 Pair with `claude --print` and a screenshot tool in CI for automated visual regression checks.
+</div>
 </body>
 </html>

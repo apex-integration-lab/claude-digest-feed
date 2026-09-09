@@ -7,24 +7,20 @@
   <style>
     :root {
       --text: #1a1a1a;
-      --text-sub: #374151;
       --bg: #ffffff;
       --code-bg: #f3f4f6;
       --border: #e5e7eb;
       --link: #2563eb;
       --back-color: #666;
-      --callout-label: #7c3aed;
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --text: #f0f0f0;
-        --text-sub: #cbd5e1;
         --bg: #0f172a;
         --code-bg: #1e293b;
         --border: #475569;
         --link: #60a5fa;
         --back-color: #94a3b8;
-        --callout-label: #a5b4fc;
       }
     }
     body {
@@ -38,14 +34,24 @@
     .back { font-size: 13px; color: var(--back-color); margin-bottom: 24px; }
     .back a { color: var(--link); text-decoration: none; }
     .back a:hover { text-decoration: underline; }
-  </style>
+    @media (prefers-color-scheme: dark) {
+      .content, .content * {
+        color: var(--text) !important;
+        border-color: var(--border) !important;
+      }
+      .content code, .content pre {
+        background: var(--code-bg) !important;
+      }
+    }
+</style>
 </head>
 <body>
+<div class="content">
 Claude Daily Digest — Tuesday, Sep 2, 2026
 
 WHAT'S NEW
 
-Claude Code v2.1.258 — Two bug fixes: macOS 12 (Monterey) users who hit a launch failure after v2.1.255 are unblocked; remote and scheduled sessions crashing with “user messages must have non-empty content” are also fixed.
+Claude Code v2.1.258 — Two bug fixes: macOS 12 (Monterey) users who hit a launch failure after v2.1.255 are unblocked; remote and scheduled sessions crashing with "user messages must have non-empty content" are also fixed.
 
 Developing Enterprise Frontier Safeguards — Anthropic published a new announcement on co-developing safety standards with enterprise partners.
 
@@ -53,12 +59,13 @@ DOCS CHANGES
 
 No changes this week — Nothing new in the Anthropic docs release notes in the past 7 days.
 
-TIP OF THE DAY
+TIP OE THE DAY
 
 Shift+Tab to auto-accept — Toggle auto-accept mode so Claude applies every edit without prompting.
 
 HAVE YOU SEEN? — Claude System Prompts
 
-Anthropic’s Official Claude System Prompts — Now Public — Anthropic published their internal system prompts in August 2026.
+Anthropic's Official Claude System Prompts — Now Public — Anthropic published their internal system prompts in August 2026.
+</div>
 </body>
 </html>

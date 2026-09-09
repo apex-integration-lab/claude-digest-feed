@@ -7,24 +7,20 @@
   <style>
     :root {
       --text: #1a1a1a;
-      --text-sub: #374151;
       --bg: #ffffff;
       --code-bg: #f3f4f6;
       --border: #e5e7eb;
       --link: #2563eb;
       --back-color: #666;
-      --callout-label: #7c3aed;
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --text: #f0f0f0;
-        --text-sub: #cbd5e1;
         --bg: #0f172a;
         --code-bg: #1e293b;
         --border: #475569;
         --link: #60a5fa;
         --back-color: #94a3b8;
-        --callout-label: #a5b4fc;
       }
     }
     body {
@@ -38,10 +34,20 @@
     .back { font-size: 13px; color: var(--back-color); margin-bottom: 24px; }
     .back a { color: var(--link); text-decoration: none; }
     .back a:hover { text-decoration: underline; }
-  </style>
+    @media (prefers-color-scheme: dark) {
+      .content, .content * {
+        color: var(--text) !important;
+        border-color: var(--border) !important;
+      }
+      .content code, .content pre {
+        background: var(--code-bg) !important;
+      }
+    }
+</style>
 </head>
 <body>
   <div class="back"><a href="../">← All digests</a></div>
+  <div class="content">
   <h2 style="color: #c44; border-bottom: 2px solid #eee; padding-bottom: 8px;">Claude Daily Digest — Thu, Sep 3</h2>
 <h3 style="color:inherit;">&#x1f4e6; What's New</h3>
 <p><strong>Claude Code v2.1.259</strong> dropped last night:</p>
@@ -51,6 +57,7 @@
   <li>Also: <code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">--permission-prompts none</code> for Headless CI runners, GitLab MR badge support (<code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">glab mr</code> commands), improved Bash sandboxing for deny rules.</li>
 </ul>
 <p style="color:var(--text-sub); font-size:0.9em;">No new Anthropia blog posts in the last 24h.</p>
+  </div>
   <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
