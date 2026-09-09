@@ -5,9 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Claude Daily Digest — Mon, Sep 7</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 0 auto; padding: 24px 16px; }
-    .back { font-size: 13px; color: #666; margin-bottom: 24px; }
-    .back a { color: #2563eb; text-decoration: none; }
+    :root {
+      --text: #1a1a1a;
+      --text-sub: #374151;
+      --text-meta: #555;
+      --bg: #ffffff;
+      --code-bg: #f3f4f6;
+      --border: #e5e7eb;
+      --callout-bg: #f5f0ff;
+      --callout-border: #7c3aed;
+      --callout-label: #7c3aed;
+      --link: #2563eb;
+      --back-color: #666;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #f0f0f0;
+        --text-sub: #cbd5e1;
+        --text-meta: #94a3b8;
+        --bg: #0f172a;
+        --code-bg: #1e293b;
+        --border: #334155;
+        --callout-bg: #1e1b4b;
+        --callout-border: #818cf8;
+        --callout-label: #a5b4fc;
+        --link: #60a5fa;
+        --back-color: #94a3b8;
+      }
+    }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 0 auto; padding: 24px 16px; }
+    .back { font-size: 13px; color: var(--back-color); margin-bottom: 24px; }
+    .back a { color: var(--link); text-decoration: none; }
+    /* Override inline-styled elements in digest content */
+    @media (prefers-color-scheme: dark) {
+      body div[style], body p[style], body h2[style], body h3[style],
+      body h4[style], body li[style], body ul[style], body span[style],
+      body strong[style] { color: var(--text) !important; }
+      body code { background: var(--code-bg) !important; color: var(--text) !important; }
+      body div[style*="#f5f0ff"],
+      body div[style*="f5f0ff"] { background: var(--callout-bg) !important; border-color: var(--callout-border) !important; }
+      body div[style*="#f5f0ff"] span,
+      body div[style*="f5f0ff"] span { color: var(--callout-label) !important; }
+      body h2[style*="#e5e7eb"],
+      body h2[style*="e5e7eb"] { border-bottom-color: var(--border) !important; }
+      body ul[style*="#374151"],
+      body ul[style*="374151"] { color: var(--text-sub) !important; }
+      body a { color: var(--link) !important; }
+    }
   </style>
 </head>
 <body>
@@ -18,8 +62,9 @@
 <table width="100%" cellpadding="0" cellspacing="0" style="border-top: 3px solid #d97706; margin-bottom: 28px;">
   <tr><td style="padding: 16px 0 0;">
     <h3 style="margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: #d97706;">&#x1f195; What&#x2019;s New</h3>
-    <p style="margin: 0; font-size: 15px; line-height: 1.6;">No major updates today. The most recent Claude Code release is <strong>v2.1.263</strong> (September 6) &#x2014; check the <a href="https://github.com/anthropics/claude-code/releases" style="color: #2563eb;">GitHub releases page</a> for changelog details.</p>
-  </td></tr>
+    <p style="margin: 0 0 8px; font-size: 15px; line-height: 1.6;"><strong>No major updates today. The most recent Claude Code release is <strong>v2.1.263</strong> (September 6) &#x2014; check the <a href="https://github.com/anthropics/claude-code/releases" style="color: #2563eb;">GitHub releases page</a> for changelog details.</p>
+  </td>
+</tr>
 </table>
 
 <table width="100%" cellpadding="0" cellspacing="0" style="border-top: 3px solid #7c3aed; margin-bottom: 28px;">

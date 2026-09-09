@@ -3,62 +3,87 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Claude Daily Digest &#x2014; Tuesday, Sep 8</title>
+  <title>Claude Daily Digest — Tuesday, Sep 8</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 0 auto; padding: 24px 16px; background: #fff; color: #1a1a1a; }
-    .back { font-size: 13px; color: #666; margin-bottom: 24px; }
-    .back a { color: #2563eb; text-decoration: none; }
-    .back a:hover { text-decoration: underline; }
+    :root {
+      --text: #1a1a1a;
+      --text-sub: #374151;
+      --text-meta: #555;
+      --bg: #ffffff;
+      --code-bg: #f3f4f6;
+      --border: #e5e7eb;
+      --callout-bg: #f5f0ff;
+      --callout-border: #7c3aed;
+      --callout-label: #7c3aed;
+      --link: #2563eb;
+      --back-color: #666;
+    }
     @media (prefers-color-scheme: dark) {
-      body { background: #0f172a; color: #f1f5f9; }
-      .back { color: #94a3b8; }
-      .back a { color: #60a5fa; }
+      :root {
+        --text: #f0f0f0;
+        --text-sub: #cbd5e1;
+        --text-meta: #94a3b8;
+        --bg: #0f172a;
+        --code-bg: #1e293b;
+        --border: #334155;
+        --callout-bg: #1e1b4b;
+        --callout-border: #818cf8;
+        --callout-label: #a5b4fc;
+        --link: #60a5fa;
+        --back-color: #94a3b8;
+      }
+    }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 0 auto; padding: 24px 16px; }
+    .back { font-size: 13px; color: var(--back-color); margin-bottom: 24px; }
+    .back a { color: var(--link); text-decoration: none; }
+    /* Override inline-styled elements in digest content */
+    @media (prefers-color-scheme: dark) {
+      body div[style], body p[style], body h2[style], body h3[style],
+      body h4[style], body li[style], body ul[style], body span[style],
+      body strong[style] { color: var(--text) !important; }
+      body code { background: var(--code-bg) !important; color: var(--text) !important; }
+      body div[style*="#f5f0ff"],
+      body div[style*="f5f0ff"] { background: var(--callout-bg) !important; border-color: var(--callout-border) !important; }
+      body div[style*="#f5f0ff"] span,
+      body div[style*="f5f0ff"] span { color: var(--callout-label) !important; }
+      body h2[style*="#e5e7eb"],
+      body h2[style*="e5e7eb"] { border-bottom-color: var(--border) !important; }
+      body ul[style*="#374151"],
+      body ul[style*="374151"] { color: var(--text-sub) !important; }
+      body a { color: var(--link) !important; }
     }
   </style>
 </head>
 <body>
-  <div class="back"><a href="../">&larr; All digests</a></div>
-  <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; max-width: 640px; margin: 0 auto; color: #1a1a1a; font-size: 15px; line-height: 1.6;">
+Claude Daily Digest — Tuesday, Sep 8
 
-<div style="background: #f5f0ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin-bottom: 28px; border-radius: 0 6px 6px 0;">
-<span style="font-weight: 600; color: #7c3aed; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">Claude Daily Digest</span><br>
-<span style="font-size: 22px; font-weight: 700; color: #1a1a1a;">Tuesday, Sep 8</span>
-</div>
+What's New
 
-<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">What's New</h2>
+No new Claude Code release today. Latest is v2.1.263 (September 6). Stable day on the release front.
 
-<p>No new Claude Code release today. Latest is <strong>v2.1.263</strong> (September 6). Stable day on the release front.</p>
+Claude Fable 5.1 on Amazon Bedrock — now generally available. Worth evaluating for complex reasoning tasks where Sonnet hits its ceiling. Existing IAM and VPC configurations apply — no new integration work needed.
 
-<p style="margin-top: 12px;"><strong>Claude Fable 5.1 on Amazon Bedrock</strong> &#x2014; now generally available. Worth evaluating for complex reasoning tasks where Sonnet hits its ceiling. Existing IAM and VPC configurations apply &#x2014; no new integration work needed.</p>
+Tip of the Day — #10: Custom slash commands
 
-<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Tip of the Day &#x2014; #10: Custom slash commands</h2>
+Create .claude/commands/your-command.md in your repo and it becomes a /your-command you can call in any Claude Code session.
 
-<p>Create <code style="background: #f3f4f6; padding: 2px 5px; border-radius: 3px; font-size: 13px;">.claude/commands/your-command.md</code> in your repo and it becomes a <code style="background: #f3f4f6; padding: 2px 5px; border-radius: 3px; font-size: 13px;">/your-command</code> you can call in any Claude Code session.</p>
+The file's content becomes the prompt. Check it in with the repo and every engineer on the team gets the same command — no manual setup, no drift.
 
-<p>The file&#x27;s content becomes the prompt. Check it in with the repo and every engineer on the team gets the same command &#x2014; no manual setup, no drift.</p>
+- /security-review — run your standard security checklist against the current diff
+- /generate-tests — generate unit tests for the last-modified file
+- /summarize-pr — draft a PR description from the current branch diff
 
-<ul style="margin: 12px 0; padding-left: 20px; color: #374151;">
-<li><code style="background: #f3f4f6; padding: 1px 4px; border-radius: 3px; font-size: 13px;">/security-review</code> &#x2014; run your standard security checklist against the current diff</li>
-<li><code style="background: #f3f4f6; padding: 1px 4px; border-radius: 3px; font-size: 13px;">/generate-tests</code> &#x2014; generate unit tests for the last-modified file</li>
-<li><code style="background: #f3f4f6; padding: 1px 4px; border-radius: 3px; font-size: 13px;">/summarize-pr</code> &#x2014; draft a PR description from the current branch diff</li>
-</ul>
+Also available in the Claude Code IDE extensions (VS Code, JetBrains) via the command palette.
 
-<p>Also available in the <strong>Claude Code IDE extensions</strong> (VS Code, JetBrains) via the command palette.</p>
+Have You Seen? — #10: Vision support
 
-<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Have You Seen? &#x2014; #10: Vision support</h2>
+Claude Code reads images. Paste a screenshot into the prompt, drag in a file, or reference a path — Claude analyzes it directly.
 
-<p>Claude Code reads images. Paste a screenshot into the prompt, drag in a file, or reference a path &#x2014; Claude analyzes it directly.</p>
+- UI debugging: screenshot the broken component — Claude identifies the CSS/layout issue
+- Architecture review: drop in a diagram — Claude reads it and gives feedback or generates code from it
+- Error triage: screenshot an obscure error — Claude identifies the root cause faster than copying log text
+- Design-to-code: share a mockup — Claude generates a component skeleton
 
-<ul style="margin: 12px 0; padding-left: 20px; color: #374151;">
-<li><strong>UI debugging:</strong> screenshot the broken component &#x2014; Claude identifies the CSS/layout issue</li>
-<li><strong>Architecture review:</strong> drop in a diagram &#x2014; Claude reads it and gives feedback or generates code from it</li>
-<li><strong>Error triage:</strong> screenshot an obscure error &#x2014; Claude identifies the root cause faster than copying log text</li>
-<li><strong>Design-to-code:</strong> share a mockup &#x2014; Claude generates a component skeleton</li>
-</ul>
-
-<p>Pair with <code style="background: #f3f4f6; padding: 2px 5px; border-radius: 3px; font-size: 13px;">claude --print</code> and a screenshot tool in CI for automated visual regression checks.</p>
-
-</div>
-  <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+Pair with `claude --print` and a screenshot tool in CI for automated visual regression checks.
 </body>
 </html>

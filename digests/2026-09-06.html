@@ -5,16 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Claude Daily Digest — Sun, Sep 6</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 0 auto; padding: 24px 16px; }
-    .back { font-size: 13px; color: #666; margin-bottom: 24px; }
-    .back a { color: #2563eb; text-decoration: none; }
+    :root {
+      --text: #1a1a1a;
+      --text-sub: #374151;
+      --text-meta: #555;
+      --bg: #ffffff;
+      --code-bg: #f3f4f6;
+      --border: #e5e7eb;
+      --callout-bg: #f5f0ff;
+      --callout-border: #7c3aed;
+      --callout-label: #7c3aed;
+      --link: #2563eb;
+      --back-color: #666;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #f0f0f0;
+        --text-sub: #cbd5e1;
+        --text-meta: #94a3b8;
+        --bg: #0f172a;
+        --code-bg: #1e293b;
+        --border: #334155;
+        --callout-bg: #1e1b4b;
+        --callout-border: #818cf8;
+        --callout-label: #a5b4fc;
+        --link: #60a5fa;
+        --back-color: #94a3b8;
+      }
+    }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 0 auto; padding: 24px 16px; }
+    .back { font-size: 13px; color: var(--back-color); margin-bottom: 24px; }
+    .back a { color: var(--link); text-decoration: none; }
+    /* Override inline-styled elements in digest content */
+    @media (prefers-color-scheme: dark) {
+      body div[style], body p[style], body h2[style], body h3[style],
+      body h4[style], body li[style], body ul[style], body span[style],
+      body strong[style] { color: var(--text) !important; }
+      body code { background: var(--code-bg) !important; color: var(--text) !important; }
+      body div[style*="#f5f0ff"],
+      body div[style*="f5f0ff"] { background: var(--callout-bg) !important; border-color: var(--callout-border) !important; }
+      body div[style*="#f5f0ff"] span,
+      body div[style*="f5f0ff"] span { color: var(--callout-label) !important; }
+      body h2[style*="#e5e7eb"],
+      body h2[style*="e5e7eb"] { border-bottom-color: var(--border) !important; }
+      body ul[style*="#374151"],
+      body ul[style*="374151"] { color: var(--text-sub) !important; }
+      body a { color: var(--link) !important; }
+    }
   </style>
 </head>
 <body>
   <div class="back"><a href="../">← All digests</a></div>
   <h2 style="color: #b03a2e; border-bottom: 2px solid #b03a2e; padding-bottom: 8px;">Claude Daily Digest &#x2014; Sun, Sep 6</h2>
 
-<h3 style="color: #2c3e50;">&#x1f195; What&#x27;s New</h3>
+<h3 style="color: #2c3e50;">&#x1f195; What&#x277s New</h3>
 <p><strong>Claude Code v2.1.263</strong> shipped overnight (Sep 6, ~3am UTC). No detailed changelog captured yet &#x2014; check the <a href="https://github.com/anthropics/claude-code/releases">releases page</a> for specifics.</p>
 <p>No new Anthropic blog posts in the last 24 hours. Most recent: <em>Developing Enterprise Frontier Safeguards with our customers</em> (Sep 1).</p>
 
@@ -26,7 +70,7 @@
 <p>Claude Code can span changes across dozens of files in one shot. Give it a clear goal &#x2014; <em>&ldquo;rename this interface and update all callers&rdquo;</em> &#x2014; rather than directing it file-by-file. It reads the full dependency graph and applies changes consistently, saving the mechanical work of tracking down every reference yourself.</p>
 
 <h3 style="color: #2c3e50;">&#x1f440; Have You Seen? &#x2014; Batch API</h3>
-<p>The Anthropic Batch API processes high-volume, non-time-sensitive requests asynchronously at <strong>50% reduced cost</strong>. Submit a batch of prompts and poll for results &#x2014; ideal for nightly code analysis jobs, bulk document processing, or generating summaries across large datasets without blocking your main workflow.</p>
+<p>The Anthropic Batch API processes high-volume, non-time-sensitive requests asynchronously at <strong>50% reduced cost</strong>. Submit a batch of prompts and poll for results &#x2014; ideal for nightly code analysis jobs, bulk document processing, or generating summaries across large datasets without blocking your main lorkflow.</p>
   <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

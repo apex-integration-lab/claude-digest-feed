@@ -5,36 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Claude Daily Digest — Tuesday, Sep 2, 2026</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 0 auto; padding: 24px 16px; }
-    .back { font-size: 13px; color: #666; margin-bottom: 24px; }
-    .back a { color: #2563eb; text-decoration: none; }
+    :root {
+      --text: #1a1a1a;
+      --text-sub: #374151;
+      --text-meta: #555;
+      --bg: #ffffff;
+      --code-bg: #f3f4f6;
+      --border: #e5e7eb;
+      --callout-bg: #f5f0ff;
+      --callout-border: #7c3aed;
+      --callout-label: #7c3aed;
+      --link: #2563eb;
+      --back-color: #666;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #f0f0f0;
+        --text-sub: #cbd5e1;
+        --text-meta: #94a3b8;
+        --bg: #0f172a;
+        --code-bg: #1e293b;
+        --border: #334155;
+        --callout-bg: #1e1b4b;
+        --callout-border: #818cf8;
+        --callout-label: #a5b4fc;
+        --link: #60a5fa;
+        --back-color: #94a3b8;
+      }
+    }
+    body { background: var(--bg); color: var(--text); }
+    .back { color: var(--back-color); }
+    .back a { color: var(--link); }
+    /* Override inline-styled elements in digest content */
+    @media (prefers-color-scheme: dark) {
+      body div[style], body p[style], body h2[style], body h3[style],
+      body h4[style], body li[style], body ul[style], body span[style],
+      body strong[style] { color: var(--text) !important; }
+      body code { background: var(--code-bg) !important; color: var(--text) !important; }
+      body div[style*="#f5f0ff"],
+      body div[style*="f5f0ff"] { background: var(--callout-bg) !important; border-color: var(--callout-border) !important; }
+      body div[style*="#f5f0ff"] span,
+      body div[style*="f5f0ff"] span { color: var(--callout-label) !important; }
+      body h2[style*="#e5e7eb"],
+      body h2[style*="e5e7eb"] { border-bottom-color: var(--border) !important; }
+      body ul[style*="#374151"],
+      body ul[style*="374151"] { color: var(--text-sub) !important; }
+      body a { color: var(--link) !important; }
+    }
   </style>
 </head>
 <body>
-  <div class="back"><a href="../">← All digests</a></div>
-  <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; max-width: 620px; color: #1e1b4b; line-height: 1.65; font-size: 15px;">
-  <div style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); color: #fff; border-radius: 10px; padding: 20px 24px; margin-bottom: 24px;">
-    <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #a5b4fc; margin-bottom: 6px;">Claude Daily Digest</div>
-    <div style="font-size: 20px; font-weight: 800; line-height: 1.2;">Tuesday, Sep 2, 2026</div>
-  </div>
-  <div style="margin-bottom: 28px;">
-    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #7c3aed; border-left: 3px solid #7c3aed; padding-left: 10px; margin-bottom: 14px;">&#x1f195; What's New</div>
-    <div style="margin-bottom: 10px; padding: 12px 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;"><strong style="color: #1e293b;">Claude Code v2.1.258</strong> &#x2014; Two bug fixes: macOS 12 (Monterey) users who hit a launch failure after v2.1.255 are unblocked; remote and scheduled sessions crashing with &ldquo;user messages must have non-empty content&rdquo; are also fixed.</div>
-    <div style="margin-bottom: 10px; padding: 12px 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;"><strong style="color: #1e293b;">Developing Enterprise Frontier Safeguards</strong> &#x2014; Anthropic published a new announcement on co-developing safety standards with enterprise partners.</div>
-  </div>
-  <div style="margin-bottom: 28px;">
-    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #0891b2; border-left: 3px solid #06b6d4; padding-left: 10px; margin-bottom: 14px;">&#x1f4c4; Docs Changes</div>
-    <div style="margin-bottom: 10px; padding: 12px 16px; background: #f0fdfa; border-radius: 8px; border: 1px solid #ccfbf1;"><strong style="color: #134e4a;">No changes this week</strong> &#x2014; Nothing new in the Anthropic docs release notes in the past 7 days.</div>
-  </div>
-  <div style="margin-bottom: 28px; background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 10px; padding: 18px 22px;">
-    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #7c3aed; margin-bottom: 10px;">&#x1f4a1; Tip of the Day</div>
-    <p style="margin: 0;"><strong style="color: #4c1d95;">Shift+Tab to auto-accept</strong> &#x2014; Toggle auto-accept mode so Claude applies every edit without prompting.</p>
-  </div>
-  <div style="margin-bottom: 28px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 18px 22px;">
-    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #1d4ed8; margin-bottom: 10px;">&#x1f440; Have You Seen? &#x2014; Claude System Prompts</div>
-    <p style="margin: 0;"><strong style="color: #1e3a5f;">Anthropic's Official Claude System Prompts &#x2014; Now Public</strong> &#x2014; Anthropic published their internal system prompts in August 2026.</p>
-  </div>
-</div>
-  <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+Claude Daily Digest — Tuesday, Sep 2, 2026
+
+WHAT'S NEW
+
+Claude Code v2.1.258 — Two bug fixes: macOS 12 (Monterey) users who hit a launch failure after v2.1.255 are unblocked; remote and scheduled sessions crashing with “user messages must have non-empty content” are also fixed.
+
+Developing Enterprise Frontier Safeguards — Anthropic published a new announcement on co-developing safety standards with enterprise partners.
+
+DOCS CHANGES
+
+No changes this week — Nothing new in the Anthropic docs release notes in the past 7 days.
+
+TIP OF THE DAY
+
+Shift+Tab to auto-accept — Toggle auto-accept mode so Claude applies every edit without prompting.
+
+HAVE YOU SEEN? — Claude System Prompts
+
+Anthropic’s Official Claude System Prompts — Now Public — Anthropic published their internal system prompts in August 2026.
 </body>
 </html>

@@ -5,22 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Claude Daily Digest — Thu, Sep 3</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 0 auto; padding: 24px 16px; }
-    .back { font-size: 13px; color: #666; margin-bottom: 24px; }
-    .back a { color: #2563eb; text-decoration: none; }
+    :root {
+      --text: #1a1a1a;
+      --text-sub: #374151;
+      --text-meta: #555;
+      --bg: #ffffff;
+      --code-bg: #f3f4f6;
+      --border: #e5e7eb;
+      --callout-bg: #f5f0ff;
+      --callout-border: #7c3aed;
+      --callout-label: #7c3aed;
+      --link: #2563eb;
+      --back-color: #666;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #f0f0f0;
+        --text-sub: #cbd5e1;
+        --text-meta: #94a3b8;
+        --bg: #0f172a;
+        --code-bg: #1e293b;
+        --border: #334155;
+        --callout-bg: #1e1b4b;
+        --callout-border: #818cf8;
+        --callout-label: #a5b4fc;
+        --link: #60a5fa;
+        --back-color: #94a3b8;
+      }
+    }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 0 auto; padding: 24px 16px; }
+    .back { font-size: 13px; color: var(--back-color); margin-bottom: 24px; }
+    .back a { color: var(--link); text-decoration: none; }
+    /* Override inline-styled elements in digest content */
+    @media (prefers-color-scheme: dark) {
+      body div[style], body p[style], body h2[style], body h3[style],
+      body h4[style], body li[style], body ul[style], body span[style],
+      body strong[style] { color: var(--text) !important; }
+      body code { background: var(--code-bg) !important; color: var(--text) !important; }
+      body div[style*="#f5f0ff"],
+      body div[style*="f5f0ff"] { background: var(--callout-bg) !important; border-color: var(--callout-border) !important; }
+      body div[style*="#f5f0ff"] span,
+      body div[style*="f5f0ff"] span { color: var(--callout-label) !important; }
+      body h2[style*="#e5e7eb"],
+      body h2[style*="e5e7eb"] { border-bottom-color: var(--border) !important; }
+      body ul[style*="#374151"],
+      body ul[style*="374151"] { color: var(--text-sub) !important; }
+      body a { color: var(--link) !important; }
+    }
   </style>
 </head>
 <body>
   <div class="back"><a href="../">← All digests</a></div>
-  <h2 style="color: #c44; border-bottom: 2px solid #eee; padding-bottom: 8px;">Claude Daily Digest &#x2014; Thu, Sep 3</h2>
-<h3 style="color: #555;">&#x1f4e6; What's New</h3>
+  <h2 style="color: #c44; border-bottom: 2px solid #eee; padding-bottom: 8px;">Claude Daily Digest — Thu, Sep 3</h2>
+<h3 style="color: #555;">📦 What's New</h3>
 <p><strong>Claude Code v2.1.259</strong> dropped last night:</p>
 <ul>
-  <li><strong>managedMcpServers</strong> &#x2014; Organizations can push HTTP/SSE MCP servers to all users via policy (same shape as <code>.mcp.json</code>). The enterprise path for giving every engineer access to shared internal tools without per-user setup.</li>
-  <li><strong>Concurrent session fix</strong> &#x2014; Running multiple Claude Code sessions in parallel was silently corrupting <code>~/.claude.json</code>, resetting workspace trust and losing MCP state. Now fixed &#x2014; parallel tmux/terminal workflows are safe.</li>
+  <li><strong>managedMcpServers</strong> — Organizations can push HTTP/SSE MCP servers to all users via policy (same shape as <code>.mcp.json</code>). The enterprise path for giving every engineer access to shared internal tools without per-user setup.</li>
+  <li><strong>Concurrent session fix</strong> — Running multiple Claude Code sessions in parallel was silently corrupting <code>~/.claude.json</code>, resetting workspace trust and losing MCP state. Now fixed — parallel tmux/terminal workflows are safe.</li>
   <li>Also: <code>--permission-prompts none</code> for Headless CI runners, GitLab MR badge support (<code>glab mr</code> commands), improved Bash sandboxing for deny rules.</li>
 </ul>
-<p style="color:#888; font-size:0.9em;">No new Anthropic blog posts in the last 24h.</p>
+<p style="color:#888; font-size:0.9em;">No new Anthropia blog posts in the last 24h.</p>
   <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
