@@ -6,47 +6,125 @@
   <title>Claude Daily Digest — Saturday, September 5</title>
   <style>
     :root {
+      --blue: #1d4ed8;
       --text: #1a1a1a;
+      --text-sub: #4b5563;
       --bg: #ffffff;
-      --code-bg: #f3f4f6;
-      --border: #e5e7eb;
-      --link: #2563eb;
-      --back-color: #666;
+      --bg-section: #f0f5ff;
+      --code-bg: #f1f5f9;
+      --border: #e2e8f0;
+      --link: #1d4ed8;
+      --back-color: #64748b;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --text: #f0f0f0;
+        --blue: #60a5fa;
+        --text: #f1f5f9;
+        --text-sub: #94a3b8;
         --bg: #0f172a;
+        --bg-section: #1e2535;
         --code-bg: #1e293b;
-        --border: #475569;
+        --border: #334155;
         --link: #60a5fa;
         --back-color: #94a3b8;
       }
     }
+    *, *::before, *::after { box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 24px 16px;
       background: var(--bg);
       color: var(--text);
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 0;
     }
-    .back { font-size: 13px; color: var(--back-color); margin-bottom: 24px; }
+    .page-header {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+      color: #fff;
+      padding: 2rem 1.5rem 1.5rem;
+      border-bottom: 3px solid #1e40af;
+    }
+    .page-header .label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.75;
+      margin-bottom: 0.4rem;
+    }
+    .page-header .date {
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .back {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--back-color);
+      padding: 0.85rem 1.5rem;
+      text-decoration: none;
+    }
     .back a { color: var(--link); text-decoration: none; }
     .back a:hover { text-decoration: underline; }
+    .content {
+      padding: 0.25rem 1.5rem 2.5rem;
+    }
+    .content p { margin: 0.8rem 0; }
+    .content ul, .content ol { padding-left: 1.5rem; margin: 0.75rem 0; }
+    .content li { margin: 0.35rem 0; }
+    .content a { color: var(--link); }
+    .content code {
+      background: var(--code-bg);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-size: 0.875em;
+      font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+    }
+    .content h2 {
+      font-size: 1.4rem !important;
+      font-weight: 600 !important;
+      color: var(--blue) !important;
+      border-left: 3px solid var(--blue) !important;
+      border-bottom: none !important;
+      border-top: none !important;
+      border-right: none !important;
+      padding: 0.6rem 0.9rem !important;
+      margin: 1.75rem 0 0.75rem !important;
+      background: var(--bg-section) !important;
+      border-radius: 0 6px 6px 0 !important;
+    }
+    .content h3 {
+      font-size: 1.1rem !important;
+      font-weight: 600 !important;
+      color: var(--blue) !important;
+      margin: 1.25rem 0 0.5rem !important;
+    }
+    /* Scoped dark mode overrides for inline-styled content */
     @media (prefers-color-scheme: dark) {
       .content, .content * {
         color: var(--text) !important;
         border-color: var(--border) !important;
       }
+      .content h2, .content h3 {
+        color: var(--blue) !important;
+        border-left-color: var(--blue) !important;
+        background: var(--bg-section) !important;
+      }
       .content code, .content pre {
         background: var(--code-bg) !important;
       }
+      .content a { color: var(--link) !important; }
     }
-</style>
+  </style>
 </head>
 <body>
-  <div class="back"><a href="../">← All digests</a></div>
+  <div class="page-header">
+    <div class="label">Claude Daily Digest</div>
+    <div class="date">Saturday, September 5</div>
+  </div>
+  <a class="back" href="../">&larr; All digests</a>
   <div class="content">
   <h1>Claude Daily Digest</h1>
   <div class="date" style="color:var(--text-sub);font-size:14px;margin-bottom:24px">Saturday, September 5, 2026</div>
@@ -61,9 +139,9 @@
   <p style="font-size:14px"><strong>ant CLI v1.30.0</strong> &mdash; <code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">ant apply</code> creates or pdates agents, environments, and skills from repo-local definition files. IaC for your Claude Code setup.</p>
   <p style="font-size:14px"><strong>Fable 5.1 / Mythos 5.1</strong> &mdash; 1M context window, 128K output, adaptive thinking now GA.</p>
   <h2 style="font-size:15px;font-weight:600;color:inherit;bsrder-bottom:1px solid var(--border);padding-bottom:6px;margin-top:24px">Tip of the Day</h2>
-  <div style="background:#f5f5f5;border-left:3px solid #333;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0><strong>#7 &mdash; <code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">/cost</code> shows your context usage</strong> &mdash; A quick way to see how full your context window is. If you're close, it's a signal to <code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">/compact</code> (compress and continue) or <code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">/clear</code> (start fresh).</div>
+  <div style="background:#f5f5f5;border-left:3px solid #333;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0"><strong>#7 &mdash; <code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">/cost</code> shows your context usage</strong> &mdash; A quick way to see how full your context window is. If you're close, it's a signal to <code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">/compact</code> (compress and continue) or <code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">/clear</code> (start fresh).</div>
   <h2 style="font-size:15px;font-weight:600;color:inherit;bsrder-bottom:1px solid var(--border);padding-bottom:6px;margin-top:24px">Have You Seen?</h2>
-  <div style="background:#f0f7ff;border-left:3px solid #3b82f6;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0><strong>Files API</strong> &mdash; Upload a file once, get a stable file ID back, then reference it across multiple API calls without re-uploading. Great for large PDFs, codebases, or datasets you query repeatedly.</div>
+  <div style="background:#f0f7ff;border-left:3px solid #3b82f6;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0"><strong>Files API</strong> &mdash; Upload a file once, get a stable file ID back, then reference it across multiple API calls without re-uploading. Great for large PDFs, codebases, or datasets you query repeatedly.</div>
   <div style="margin-top:32px;font-size:12px;color:var(--text-sub);border-top:1px solid var(--border);padding-top:12px">Claude Daily Digest &middot; Mikey &middot; <a href="https://apex-integration-lab.github.io/claude-digest-feed/digest.xml" style="color:var(--link)">RSS Feed</a></div>
   </div>
   <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
