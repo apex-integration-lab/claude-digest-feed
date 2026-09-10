@@ -66,8 +66,7 @@
       padding: 0.85rem 1.5rem;
       text-decoration: none;
     }
-    .back a { color: var(--link); text-decoration: none; }
-    .back a:hover { text-decoration: underline; }
+    .back:hover { text-decoration: underline; }
     .content {
       padding: 0.25rem 1.5rem 2.5rem;
     }
@@ -83,25 +82,22 @@
       font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
     }
     .content h2 {
-      font-size: 1.4rem !important;
-      font-weight: 600 !important;
-      color: var(--blue) !important;
-      border-left: 3px solid var(--blue) !important;
-      border-bottom: none !important;
-      border-top: none !important;
-      border-right: none !important;
-      padding: 0.6rem 0.9rem !important;
-      margin: 1.75rem 0 0.75rem !important;
-      background: var(--bg-section) !important;
-      border-radius: 0 6px 6px 0 !important;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--blue);
+      border-left: 3px solid var(--blue);
+      padding: 0.6rem 0.9rem;
+      margin: 1.75rem 0 0.75rem;
+      background: var(--bg-section);
+      border-radius: 0 6px 6px 0;
     }
+    .content h2 .section-type { font-weight: 400; }
     .content h3 {
-      font-size: 1.1rem !important;
-      font-weight: 600 !important;
-      color: var(--blue) !important;
-      margin: 1.25rem 0 0.5rem !important;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin: 1.25rem 0 0.5rem;
     }
-    /* Scoped dark mode overrides for inline-styled content */
     @media (prefers-color-scheme: dark) {
       .content, .content * {
         color: var(--text) !important;
@@ -126,43 +122,40 @@
   </div>
   <a class="back" href="../">&larr; All digests</a>
   <div class="content">
-  <h2 style="margin: 0 0 4px; font-size: 20px; color:inherit;">Claude Daily Digest</h2>
-<p style="margin: 0 0 28px; color: var(--text-sub); font-size: 14px;">Monday, September 7, 2026</p>
-
-<table width="100%" cellpadding="0" cellspacing="0" style="border-top: 3px solid #d97706; margin-bottom: 28px;">
-  <tr><td style="padding: 16px 0 0;">
-    <h3 style="margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: #d97706;">&#x1f195; What&#x2019;s New</h3>
-    <p style="margin: 0 0 8px; font-size: 15px; line-height: 1.6;"><strong>No major updates today. The most recent Claude Code release is <strong>v2.1.263</strong> (September 6) &#x2014; check the <a href="https://github.com/anthropics/claude-code/releases" style="color: var(--link);">GitHub releases page</a> for changelog details.</p>
-  </td>
-</tr>
-</table>
-
-<table width="100%" cellpadding="0" cellspacing="0" style="border-top: 3px solid #7c3aed; margin-bottom: 28px;">
-  <tr><td style="padding: 16px 0 0;">
-    <h3 style="margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--callout-label);">&#x1f4c4; Docs Changes</h3>
-    <p style="margin: 0 0 8px; font-size: 15px; line-height: 1.6;"><strong>September 3 &#x2014; <code>ant</code> CLI v1.30.0 adds <code>ant apply</code></strong></p>
-    <p style="margin: 0; font-size: 15px; line-height: 1.6;">The <code>ant apply</code> command lets you manage agents, environments, skills, memory stores, and deployments from config files in your repo. Describe each resource in a file, run <code>ant apply</code>, and it prints a plan for approval. The resulting <code>claude-lock.json</code> lockfile ensures CI and teammates update the same resources &#x2014; no drift. Think Terraform, but for Claude infrastructure.</p>
-  </td></tr>
-</table>
-
-<table width="100%" cellpadding="0" cellspacing="0" style="border-top: 3px solid #059669; margin-bottom: 28px;">
-  <tr><td style="padding: 16px 0 0;">
-    <h3 style="margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: #059669;">&#x1f4a3; Tip of the Day</h3>
-    <p style="margin: 0 6px; font-size: 15px;"><strong>Claude Code in CI</strong></p>
-    <p style="margin: 0; font-size: 15px; line-height: 1.6;">Run <code>claude --print</code> non-interactively in scripts and CI pipelines. Useful for automated code review, doc generation, or changelog drafting on each PR &#x2014; no human in the loop required. Pair it with <code>--output-format json</code> if you need structured output downstream.</p>
-  </td></tr>
-</table>
-
-<table width="100%" cellpadding="0" cellspacing="0" style="border-top: 3px solid #2563eb; margin-bottom: 16px;">
-  <tr><td style="padding: 16px 0 0;">
-    <h3 style="margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--link);">&#x1f440; Have You Seen?</h3>
-    <p style="margin: 0 0 6px; font-size: 15px;"><strong>Claude Code <code>/review</code> command</strong></p>
-    <p style="margin: 0; font-size: 15px; line-height: 1.6;">Claude Code has a built-in PR review command. Run <code>/review</code> on an open diff and Claude reads the changes, flags bugs and simplification opportunities, and can post inline GitHub comments &#x2014; no third-party code review tool needed. It&#x2019;s aware of your repo context (CLAUDE.md, recent history) so the feedback is specific, not generic.</p>
-  </td></tr>
-</table>
-
-<p style="margin: 24px 0 0; font-size: 12px; color: var(--text-sub);">Sent by Mikey</p>
-  </div>
+  <h2>Monday, September 7, 2026</h2>
+  <h2>&amp;#x1f195; What's New</h2>
+  <h2>No major updates today. The most recent Claude Code release is</h2>
+  <h2>v2.1.263</h2>
+  <h2><span class="section-type">(September 6)</span> &mdash; <strong>check the</strong></h2>
+  <h2>GitHub releases page</h2>
+  <p>for changelog details.</p>
+  <h2>&amp;#x1f4c4; Docs Changes</h2>
+  <h2>September 3 —</h2>
+  <h2>ant</h2>
+  <h2>CLI v1.30.0 adds</h2>
+  <h2>ant apply</h2>
+  <h2>The</h2>
+  <h2>ant apply</h2>
+  <p>command lets you manage agents, environments, skills, memory stores, and deployments from config files in your repo. Describe each resource in a file, run</p>
+  <h2>ant apply</h2>
+  <h2>, and it prints a plan for approval. The resulting</h2>
+  <h2>claude-lock.json</h2>
+  <p>lockfile ensures CI and teammates update the same resources — no drift. Think Terraform, but for Claude infrastructure.</p>
+  <h2>&amp;#x1f4a3; Tip of the Day</h2>
+  <h2>Claude Code in CI</h2>
+  <h2>Run</h2>
+  <h2>claude --print</h2>
+  <p>non-interactively in scripts and CI pipelines. Useful for automated code review, doc generation, or changelog drafting on each PR — no human in the loop required. Pair it with</p>
+  <h2>--output-format json</h2>
+  <p>if you need structured output downstream.</p>
+  <p>&amp;#x1f440; Have You Seen?</p>
+  <h2>Claude Code</h2>
+  <h2>/review</h2>
+  <h2>command</h2>
+  <h2>Claude Code has a built-in PR review command. Run</h2>
+  <h2>/review</h2>
+  <p>on an open diff and Claude reads the changes, flags bugs and simplification opportunities, and can post inline GitHub comments — no third-party code review tool needed. It's aware of your repo context (CLAUDE.md, recent history) so the feedback is specific, not generic.</p>
+  <h2>Sent by Mikey</h2>
   <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

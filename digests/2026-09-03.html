@@ -66,8 +66,7 @@
       padding: 0.85rem 1.5rem;
       text-decoration: none;
     }
-    .back a { color: var(--link); text-decoration: none; }
-    .back a:hover { text-decoration: underline; }
+    .back:hover { text-decoration: underline; }
     .content {
       padding: 0.25rem 1.5rem 2.5rem;
     }
@@ -83,25 +82,22 @@
       font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
     }
     .content h2 {
-      font-size: 1.4rem !important;
-      font-weight: 600 !important;
-      color: var(--blue) !important;
-      border-left: 3px solid var(--blue) !important;
-      border-bottom: none !important;
-      border-top: none !important;
-      border-right: none !important;
-      padding: 0.6rem 0.9rem !important;
-      margin: 1.75rem 0 0.75rem !important;
-      background: var(--bg-section) !important;
-      border-radius: 0 6px 6px 0 !important;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--blue);
+      border-left: 3px solid var(--blue);
+      padding: 0.6rem 0.9rem;
+      margin: 1.75rem 0 0.75rem;
+      background: var(--bg-section);
+      border-radius: 0 6px 6px 0;
     }
+    .content h2 .section-type { font-weight: 400; }
     .content h3 {
-      font-size: 1.1rem !important;
-      font-weight: 600 !important;
-      color: var(--blue) !important;
-      margin: 1.25rem 0 0.5rem !important;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin: 1.25rem 0 0.5rem;
     }
-    /* Scoped dark mode overrides for inline-styled content */
     @media (prefers-color-scheme: dark) {
       .content, .content * {
         color: var(--text) !important;
@@ -126,16 +122,23 @@
   </div>
   <a class="back" href="../">&larr; All digests</a>
   <div class="content">
-  <h2 style="color: #c44; border-bottom: 2px solid #eee; padding-bottom: 8px;">Claude Daily Digest — Thu, Sep 3</h2>
-<h3 style="color:inherit;">&#x1f4e6; What's New</h3>
-<p><strong>Claude Code v2.1.259</strong> dropped last night:</p>
-<ul>
-  <li><strong>managedMcpServers</strong> — Organizations can push HTTP/SSE MCP servers to all users via policy (same shape as <code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">.mcp.json</code>). The enterprise path for giving every engineer access to shared internal tools without per-user setup.</li>
-  <li><strong>Concurrent session fix</strong> — Running multiple Claude Code sessions in parallel was silently corrupting <code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">~/.claude.json</code>, resetting workspace trust and losing MCP state. Now fixed — parallel tmux/terminal workflows are safe.</li>
-  <li>Also: <code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">--permission-prompts none</code> for Headless CI runners, GitLab MR badge support (<code style="background:var(--code-bg);padding:2px 5px;border-radius:3px;font-size:12px">glab mr</code> commands), improved Bash sandboxing for deny rules.</li>
-</ul>
-<p style="color:var(--text-sub); font-size:0.9em;">No new Anthropia blog posts in the last 24h.</p>
-  </div>
+  <h2>&amp;#x1f4e6; What's New</h2>
+  <h2>Claude Code v2.1.259</h2>
+  <h2>dropped last night:</h2>
+  <h2>managedMcpServers</h2>
+  <p>— Organizations can push HTTP/SSE MCP servers to all users via policy (same shape as</p>
+  <h2>.mcp.json</h2>
+  <p>). The enterprise path for giving every engineer access to shared internal tools without per-user setup.</p>
+  <h2>Concurrent session fix</h2>
+  <p>— Running multiple Claude Code sessions in parallel was silently corrupting</p>
+  <h2>~/.claude.json</h2>
+  <p>, resetting workspace trust and losing MCP state. Now fixed — parallel tmux/terminal workflows are safe.</p>
+  <h2>Also:</h2>
+  <h2>--permission-prompts none</h2>
+  <h2>for Headless CI runners, GitLab MR badge support (</h2>
+  <h2>glab mr</h2>
+  <p>commands), improved Bash sandboxing for deny rules.</p>
+  <p>No new Anthropia blog posts in the last 24h.</p>
   <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

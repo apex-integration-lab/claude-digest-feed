@@ -66,8 +66,7 @@
       padding: 0.85rem 1.5rem;
       text-decoration: none;
     }
-    .back a { color: var(--link); text-decoration: none; }
-    .back a:hover { text-decoration: underline; }
+    .back:hover { text-decoration: underline; }
     .content {
       padding: 0.25rem 1.5rem 2.5rem;
     }
@@ -83,25 +82,22 @@
       font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
     }
     .content h2 {
-      font-size: 1.4rem !important;
-      font-weight: 600 !important;
-      color: var(--blue) !important;
-      border-left: 3px solid var(--blue) !important;
-      border-bottom: none !important;
-      border-top: none !important;
-      border-right: none !important;
-      padding: 0.6rem 0.9rem !important;
-      margin: 1.75rem 0 0.75rem !important;
-      background: var(--bg-section) !important;
-      border-radius: 0 6px 6px 0 !important;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--blue);
+      border-left: 3px solid var(--blue);
+      padding: 0.6rem 0.9rem;
+      margin: 1.75rem 0 0.75rem;
+      background: var(--bg-section);
+      border-radius: 0 6px 6px 0;
     }
+    .content h2 .section-type { font-weight: 400; }
     .content h3 {
-      font-size: 1.1rem !important;
-      font-weight: 600 !important;
-      color: var(--blue) !important;
-      margin: 1.25rem 0 0.5rem !important;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin: 1.25rem 0 0.5rem;
     }
-    /* Scoped dark mode overrides for inline-styled content */
     @media (prefers-color-scheme: dark) {
       .content, .content * {
         color: var(--text) !important;
@@ -126,25 +122,15 @@
   </div>
   <a class="back" href="../">&larr; All digests</a>
   <div class="content">
-Claude Daily Digest — Tuesday, Sep 2, 2026
-
-WHAT'S NEW
-
-Claude Code v2.1.258 — Two bug fixes: macOS 12 (Monterey) users who hit a launch failure after v2.1.255 are unblocked; remote and scheduled sessions crashing with "user messages must have non-empty content" are also fixed.
-
-Developing Enterprise Frontier Safeguards — Anthropic published a new announcement on co-developing safety standards with enterprise partners.
-
-DOCS CHANGES
-
-No changes this week — Nothing new in the Anthropic docs release notes in the past 7 days.
-
-TIP OE THE DAY
-
-Shift+Tab to auto-accept — Toggle auto-accept mode so Claude applies every edit without prompting.
-
-HAVE YOU SEEN= > claude system prompts
-
-Anthropic's Official Claude System Prompts — Now Public — Anthropic published their internal system prompts in August 2026. </div>
+  <h2>WHAT'S NEW</h2>
+  <p>Claude Code v2.1.258 — Two bug fixes: macOS 12 (Monterey) users who hit a launch failure after v2.1.255 are unblocked; remote and scheduled sessions crashing with "user messages must have non-empty content" are also fixed.</p>
+  <p>Developing Enterprise Frontier Safeguards — Anthropic published a new announcement on co-developing safety standards with enterprise partners.</p>
+  <h2>DOCS CHANGES</h2>
+  <p>No changes this week — Nothing new in the Anthropic docs release notes in the past 7 days.</p>
+  <h2>TIP OF THE DAY</h2>
+  <p>Shift+Tab to auto-accept — Toggle auto-accept mode so Claude applies every edit without prompting.</p>
+  <h2>HAVE YOU SEEN= &gt; claude system prompts</h2>
+  <p>Anthropic's Official Claude System Prompts — Now Public — Anthropic published their internal system prompts in August 2026.</p>
   <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

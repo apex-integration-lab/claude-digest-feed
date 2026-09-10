@@ -66,8 +66,7 @@
       padding: 0.85rem 1.5rem;
       text-decoration: none;
     }
-    .back a { color: var(--link); text-decoration: none; }
-    .back a:hover { text-decoration: underline; }
+    .back:hover { text-decoration: underline; }
     .content {
       padding: 0.25rem 1.5rem 2.5rem;
     }
@@ -83,25 +82,22 @@
       font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
     }
     .content h2 {
-      font-size: 1.4rem !important;
-      font-weight: 600 !important;
-      color: var(--blue) !important;
-      border-left: 3px solid var(--blue) !important;
-      border-bottom: none !important;
-      border-top: none !important;
-      border-right: none !important;
-      padding: 0.6rem 0.9rem !important;
-      margin: 1.75rem 0 0.75rem !important;
-      background: var(--bg-section) !important;
-      border-radius: 0 6px 6px 0 !important;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--blue);
+      border-left: 3px solid var(--blue);
+      padding: 0.6rem 0.9rem;
+      margin: 1.75rem 0 0.75rem;
+      background: var(--bg-section);
+      border-radius: 0 6px 6px 0;
     }
+    .content h2 .section-type { font-weight: 400; }
     .content h3 {
-      font-size: 1.1rem !important;
-      font-weight: 600 !important;
-      color: var(--blue) !important;
-      margin: 1.25rem 0 0.5rem !important;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin: 1.25rem 0 0.5rem;
     }
-    /* Scoped dark mode overrides for inline-styled content */
     @media (prefers-color-scheme: dark) {
       .content, .content * {
         color: var(--text) !important;
@@ -126,37 +122,27 @@
   </div>
   <a class="back" href="../">&larr; All digests</a>
   <div class="content">
-Claude Daily Digest — Tuesday, Sep 8
-
-What's New
-
-No new Claude Code release today. Latest is v2.1.263 (September 6). Stable day on the release front.
-
-Claude Fable 5.1 on Amazon Bedrock — now generally available. Worth evaluating for complex reasoning tasks where Sonnet hits its ceiling. Existing IAM and VPC configurations apply — no new integration work needed.
-
-Tip of the Day — #10: Custom slash commands
-
-Create .claude/commands/your-command.md in your repo and it becomes a /your-command you can call in any Claude Code session.
-
-The file's content becomes the prompt. Check it in with the repo and every engineer on the team gets the same command — no manual setup, no drift.
-
-- /security-review — run your standard security checklist against the current diff
-- /generate-tests — generate unit tests for the last-modified file
-- /summarize-pr — draft a PR description from the current branch diff
-
-Also available in the Claude Code IDE extensions (VS Code, JetBrains) via the command palette.
-
-Have You Seen? — #10: Vision support
-
-Claude Code reads images. Paste a screenshot into the prompt, drag in a file, or reference a path — Claude analyzes it directly.
-
-- UI debugging: screenshot the broken component — Claude identifies the CSS/layout issue
-- Architecture review: drop in a diagram — Claude reads it and gives feedback or generates code from it
-- Error triage: screenshot an obscure error — Claude identifies the root cause faster than copying log text
-- Design-to-code: share a mockup — Claude generates a component skeleton
-
-Pair with `claude --print` and a screenshot tool in CI for automated visual regression checks.
-  </div>
+  <h2>What's New</h2>
+  <p>No new Claude Code release today. Latest is v2.1.263 (September 6). Stable day on the release front.</p>
+  <p>Claude Fable 5.1 on Amazon Bedrock — now generally available. Worth evaluating for complex reasoning tasks where Sonnet hits its ceiling. Existing IAM and VPC configurations apply — no new integration work needed.</p>
+  <h2><span class="section-type">Tip of the Day</span> &mdash; <strong>#10: Custom slash commands</strong></h2>
+  <p>Create .claude/commands/your-command.md in your repo and it becomes a /your-command you can call in any Claude Code session.</p>
+  <p>The file's content becomes the prompt. Check it in with the repo and every engineer on the team gets the same command — no manual setup, no drift.</p>
+  <ul>
+    <li>/security-review — run your standard security checklist against the current diff</li>
+    <li>/generate-tests — generate unit tests for the last-modified file</li>
+    <li>/summarize-pr — draft a PR description from the current branch diff</li>
+  </ul>
+  <p>Also available in the Claude Code IDE extensions (VS Code, JetBrains) via the command palette.</p>
+  <h2><span class="section-type">Have You Seen?</span> &mdash; <strong>#10: Vision support</strong></h2>
+  <p>Claude Code reads images. Paste a screenshot into the prompt, drag in a file, or reference a path — Claude analyzes it directly.</p>
+  <ul>
+    <li>UI debugging: screenshot the broken component — Claude identifies the CSS/layout issue</li>
+    <li>Architecture review: drop in a diagram — Claude reads it and gives feedback or generates code from it</li>
+    <li>Error triage: screenshot an obscure error — Claude identifies the root cause faster than copying log text</li>
+    <li>Design-to-code: share a mockup — Claude generates a component skeleton</li>
+  </ul>
+  <p>Pair with `claude --print` and a screenshot tool in CI for automated visual regression checks.</p>
   <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

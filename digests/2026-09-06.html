@@ -66,8 +66,7 @@
       padding: 0.85rem 1.5rem;
       text-decoration: none;
     }
-    .back a { color: var(--link); text-decoration: none; }
-    .back a:hover { text-decoration: underline; }
+    .back:hover { text-decoration: underline; }
     .content {
       padding: 0.25rem 1.5rem 2.5rem;
     }
@@ -83,25 +82,22 @@
       font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
     }
     .content h2 {
-      font-size: 1.4rem !important;
-      font-weight: 600 !important;
-      color: var(--blue) !important;
-      border-left: 3px solid var(--blue) !important;
-      border-bottom: none !important;
-      border-top: none !important;
-      border-right: none !important;
-      padding: 0.6rem 0.9rem !important;
-      margin: 1.75rem 0 0.75rem !important;
-      background: var(--bg-section) !important;
-      border-radius: 0 6px 6px 0 !important;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--blue);
+      border-left: 3px solid var(--blue);
+      padding: 0.6rem 0.9rem;
+      margin: 1.75rem 0 0.75rem;
+      background: var(--bg-section);
+      border-radius: 0 6px 6px 0;
     }
+    .content h2 .section-type { font-weight: 400; }
     .content h3 {
-      font-size: 1.1rem !important;
-      font-weight: 600 !important;
-      color: var(--blue) !important;
-      margin: 1.25rem 0 0.5rem !important;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin: 1.25rem 0 0.5rem;
     }
-    /* Scoped dark mode overrides for inline-styled content */
     @media (prefers-color-scheme: dark) {
       .content, .content * {
         color: var(--text) !important;
@@ -126,22 +122,31 @@
   </div>
   <a class="back" href="../">&larr; All digests</a>
   <div class="content">
-  <h2 style="color: #b03a2e; border-bottom: 2px solid #b03a2e; padding-bottom: 8px;">Claude Daily Digest &#x2014; Sun, Sep 6</h2>
-
-<h3 style="color:inherit;">&#x1f195; What&#x277s New</h3>
-<p><strong>Claude Code v2.1.263</strong> shipped overnight (Sep 6, ~3am UTC). No detailed changelog captured yet &#x2014; check the <a href="https://github.com/anthropics/claude-code/releases">releases page</a> for specifics.</p>
-<p>No new Anthropic blog posts in the last 24 hours. Most recent: <em>Developing Enterprise Frontier Safeguards with our customers</em> (Sep 1).</p>
-
-<h3 style="color:inherit;">&#x1f4c4; Docs Changes</h3>
-<p><strong>Sep 3 &#x2014;</strong> <code>ant apply</code> added to CLI v1.30.0. Manages agents, environments, skills, memory stores, and deployments as code; generates a <code>claude-lock.json</code> lockfile for reproducible infrastructure.</p>
-<p><strong>Sep 1 &#x2014;</strong> <strong>Claude Fable 5.1 + Mythos 5.1</strong> launched. 1M token context window, always-on adaptive thinking, same pricing ($10/$50/MTok), cache reads at $0.25/MTok. Betas: per-message effort control, turn-scoped system messages, text watermark + C2PA support.</p>
-
-<h3 style="color:inherit;">&#x1f4a1; Tip of the Day #8 &#x2014; Multi-file refactors</h3>
-<p>Claude Code can span changes across dozens of files in one shot. Give it a clear goal &#x2014; <em>&ldquo;rename this interface and update all callers&rdquo;</em> &#x2014; rather than directing it file-by-file. It reads the full dependency graph and applies changes consistently, saving the mechanical work of tracking down every reference yourself.</p>
-
-<h3 style="color:inherit;">&#x1f440; Have You Seen? &#x2014; Batch API</h3>
-<p>The Anthropia Batch API processes high-volume, non-time-sensitive requests asynchronously at <strong>50% reduced cost</strong>. Submit a batch of prompts and poll for results &#x2014; ideal for nightly code analysis jobs, bulk document processing, or generating summaries across large datasets without blocking your main lorkflow.</p>
-  </div>
+  <h2>&amp;#x1f195; What&amp;#x277s New</h2>
+  <h2>Claude Code v2.1.263</h2>
+  <p>shipped overnight (Sep 6, ~3am UTC). No detailed changelog captured yet — check the</p>
+  <h2>releases page</h2>
+  <p>for specifics.</p>
+  <h2>No new Anthropic blog posts in the last 24 hours. Most recent:</h2>
+  <h2>Developing Enterprise Frontier Safeguards with our customers</h2>
+  <p>(Sep 1).</p>
+  <h2>&amp;#x1f4c4; Docs Changes</h2>
+  <h2>Sep 3 —</h2>
+  <h2>ant apply</h2>
+  <p>added to CLI v1.30.0. Manages agents, environments, skills, memory stores, and deployments as code; generates a</p>
+  <h2>claude-lock.json</h2>
+  <p>lockfile for reproducible infrastructure.</p>
+  <h2>Sep 1 —</h2>
+  <h2>Claude Fable 5.1 + Mythos 5.1</h2>
+  <p>launched. 1M token context window, always-on adaptive thinking, same pricing ($10/$50/MTok), cache reads at $0.25/MTok. Betas: per-message effort control, turn-scoped system messages, text watermark + C2PA support.</p>
+  <h2><span class="section-type">&amp;#x1f4a1; Tip of the Day #8</span> &mdash; <strong>Multi-file refactors</strong></h2>
+  <p>Claude Code can span changes across dozens of files in one shot. Give it a clear goal —</p>
+  <p>&amp;ldquo;rename this interface and update all callers&amp;rdquo;</p>
+  <p>— rather than directing it file-by-file. It reads the full dependency graph and applies changes consistently, saving the mechanical work of tracking down every reference yourself.</p>
+  <h2><span class="section-type">&amp;#x1f440; Have You Seen?</span> &mdash; <strong>Batch API</strong></h2>
+  <p>The Anthropia Batch API processes high-volume, non-time-sensitive requests asynchronously at</p>
+  <p>50% reduced cost</p>
+  <p>. Submit a batch of prompts and poll for results — ideal for nightly code analysis jobs, bulk document processing, or generating summaries across large datasets without blocking your main lorkflow.</p>
   <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
