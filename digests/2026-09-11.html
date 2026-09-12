@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude Daily Digest — Friday, Sep 11</title>
+  <style>
+    :root {
+      --blue: #1d4ed8;
+      --text: #1a1a1a;
+      --text-sub: #4b5563;
+      --bg: #ffffff;
+      --bg-section: #f0f5ff;
+      --code-bg: #f1f5f9;
+      --border: #e2e8f0;
+      --link: #1d4ed8;
+      --back-color: #64748b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --blue: #60a5fa;
+        --text: #f1f5f9;
+        --text-sub: #94a3b8;
+        --bg: #0f172a;
+        --bg-section: #1e2535;
+        --code-bg: #1e293b;
+        --border: #334155;
+        --link: #60a5fa;
+        --back-color: #94a3b8;
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 0;
+    }
+    .page-header {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+      color: #fff;
+      padding: 2rem 1.5rem 1.5rem;
+      border-bottom: 3px solid #1e40af;
+    }
+    .page-header .label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.75;
+      margin-bottom: 0.4rem;
+    }
+    .page-header .date {
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .back {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--back-color);
+      padding: 0.85rem 1.5rem;
+      text-decoration: none;
+    }
+    .back:hover { text-decoration: underline; }
+    .content {
+      padding: 0.25rem 1.5rem 2.5rem;
+    }
+    .content p { margin: 0.8rem 0; }
+    .content ul, .content ol { padding-left: 1.5rem; margin: 0.75rem 0; }
+    .content li { margin: 0.35rem 0; }
+    .content a { color: var(--link); }
+    .content code {
+      background: var(--code-bg);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-size: 0.875em;
+      font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+    }
+    .content h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--blue);
+      border-left: 3px solid var(--blue);
+      padding: 0.6rem 0.9rem;
+      margin: 1.75rem 0 0.75rem;
+      background: var(--bg-section);
+      border-radius: 0 6px 6px 0;
+    }
+    .content h2 .section-type { font-weight: 400; }
+    .content h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin: 1.25rem 0 0.5rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      .content, .content * {
+        color: var(--text) !important;
+        border-color: var(--border) !important;
+      }
+      .content h2, .content h3 {
+        color: var(--blue) !important;
+        border-left-color: var(--blue) !important;
+        background: var(--bg-section) !important;
+      }
+      .content code, .content pre {
+        background: var(--code-bg) !important;
+      }
+      .content a { color: var(--link) !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <div class="label">Claude Daily Digest</div>
+    <div class="date">Friday, Sep 11</div>
+  </div>
+  <a class="back" href="../">&larr; All digests</a>
+  <div class="content">
+  <h1>Claude Daily Digest</h1>
+<p class="subtitle">Friday, Sep 11, 2026</p>
+
+<h2>🆕 What's New</h2>
+<p><strong>Claude Code v2.1.269</strong> dropped with two headline features:</p>
+<ul>
+<li><strong>Plugin eval suite</strong> — built-in harness for testing and benchmarking Claude Code plugins ⭐</li>
+<li><strong><code>WORKFLOW_MAX_CONCURRENT_AGENTS</code> (1–256)</strong> — tune parallelism for multi-agent workflows; default stays 10 ⭐</li>
+<li>Bash diff output improvements, OTel <code>vcs.*</code> tagging for observability, and a prompt cache correctness fix</li>
+</ul>
+
+<h2>📄 Docs Changes</h2>
+<p><strong>Managed Agents: <code>auto</code> permission mode</strong> — The server now evaluates each agent/MCP tool call and decides to run, deny, or pause for approval. The <code>agent.tool_use</code> and <code>agent.mcp_tool_use</code> events include an <code>evaluation</code> field with the result. <a href="https://platform.claude.com/docs/en/managed-agents/permission-policies#let-the-server-evaluate-each-call-with-auto">Read the docs →</a></p>
+<p><strong><code>ant beta:sessions connect</code></strong> — Attach your terminal to a live Managed Agents session to follow progress, send messages, and approve/deny tool calls. Add <code>--web</code> to serve the session viewer locally. <a href="https://platform.claude.com/docs/en/cli-sdks-libraries/cli/sessions-connect">Read the docs →</a></p>
+
+<h2>💡 Tip of the Day</h2>
+<div class="tip-box"><strong>#13 — Inline /review for PRs</strong><br><br>Run <code>/review</code> on an open PR and Claude reads your diff, flags bugs and simplification opportunities, and can post inline GitHub comments — no separate code review tool required. It integrates cleanly into a Claude Code session where you're already making changes.</div>
+
+<h2>👀 Have You Seen?</h2>
+<p><strong>Constitutional AI</strong> — Anthropic's core training technique, published as open research, lets Claude self-critique against a set of principles rather than relying purely on human feedback. Why it matters for practitioners: the principles Claude weighs internally mirror the kind of explicit guidance you provide in system prompts. Better-aligned instructions → more predictable, consistent outputs.</p>
+<p><a href="https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback">Read the research →</a></p>
+  <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
