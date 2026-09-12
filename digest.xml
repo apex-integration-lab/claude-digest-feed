@@ -11,6 +11,36 @@
     <atom:link href="https://apex-integration-lab.github.io/claude-digest-feed/digest.xml" rel="self" type="application/rss+xml"/>
 
     <item>
+      <title>Claude Daily Digest &#x2014; Friday, Sep 11</title>
+      <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-11.html</link>
+      <guid isPermaLink="false">claude-digest-2026-09-11</guid>
+      <pubDate>Fri, 11 Sep 2026 11:00:00 -0400</pubDate>
+      <description>Claude Code v2.1.269 lands with plugin eval suite + WORKFLOW_MAX_CONCURRENT_AGENTS 1–256; Managed Agents auto permission mode; /review for PRs tip.</description>
+      <content:encoded><![CDATA[<!DOCTYPE html><html><head><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1a1a1a;max-width:600px;margin:0 auto;padding:20px}h1{color:#2d1466;font-size:20px;margin-bottom:4px}h2{color:#4a1f93;font-size:15px;margin:24px 0 8px;border-bottom:1px solid #e0d6f5;padding-bottom:4px}p{margin:0 0 8px;line-height:1.5;font-size:14px}.subtitle{color:#666;font-size:13px;margin-bottom:24px}.tip-box{background:#f7f4fd;border-left:3px solid #7c3aed;padding:10px 14px;margin:6px 0;border-radius:0 4px 4px 0;font-size:14px;line-height:1.6}ul{font-size:14px;margin:6px 0;padding-left:20px;line-height:1.7}a{color:#7c3aed}code{background:#f0ebff;padding:1px 5px;border-radius:3px;font-size:13px}</style></head><body><h1>Claude Daily Digest</h1>
+<p class="subtitle">Friday, Sep 11, 2026</p>
+
+<h2>🆕 What's New</h2>
+<p><strong>Claude Code v2.1.269</strong> dropped with two headline features:</p>
+<ul>
+<li><strong>Plugin eval suite</strong> — built-in harness for testing and benchmarking Claude Code plugins ⭐</li>
+<li><strong><code>WORKFLOW_MAX_CONCURRENT_AGENTS</code> (1–256)</strong> — tune parallelism for multi-agent workflows; default stays 10 ⭐</li>
+<li>Bash diff output improvements, OTel <code>vcs.*</code> tagging for observability, and a prompt cache correctness fix</li>
+</ul>
+
+<h2>📄 Docs Changes</h2>
+<p><strong>Managed Agents: <code>auto</code> permission mode</strong> — The server now evaluates each agent/MCP tool call and decides to run, deny, or pause for approval. The <code>agent.tool_use</code> and <code>agent.mcp_tool_use</code> events include an <code>evaluation</code> field with the result. <a href="https://platform.claude.com/docs/en/managed-agents/permission-policies#let-the-server-evaluate-each-call-with-auto">Read the docs →</a></p>
+<p><strong><code>ant beta:sessions connect</code></strong> — Attach your terminal to a live Managed Agents session to follow progress, send messages, and approve/deny tool calls. Add <code>--web</code> to serve the session viewer locally. <a href="https://platform.claude.com/docs/en/cli-sdks-libraries/cli/sessions-connect">Read the docs →</a></p>
+
+<h2>💡 Tip of the Day</h2>
+<div class="tip-box"><strong>#13 — Inline /review for PRs</strong><br><br>Run <code>/review</code> on an open PR and Claude reads your diff, flags bugs and simplification opportunities, and can post inline GitHub comments — no separate code review tool required. It integrates cleanly into a Claude Code session where you're already making changes.</div>
+
+<h2>👀 Have You Seen?</h2>
+<p><strong>Constitutional AI</strong> — Anthropic's core training technique, published as open research, lets Claude self-critique against a set of principles rather than relying purely on human feedback. Why it matters for practitioners: the principles Claude weighs internally mirror the kind of explicit guidance you provide in system prompts. Better-aligned instructions → more predictable, consistent outputs.</p>
+<p><a href="https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback">Read the research →</a></p>
+</body></html>]]></content:encoded>
+    </item>
+
+    <item>
       <title>Claude Daily Digest &#x2014; Tuesday, Sep 8</title>
       <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-08.html</link>
       <guid isPermaLink="false">claude-digest-2026-09-08</guid>
@@ -34,103 +64,79 @@
 
 <p>Create <code style="background: #f3f4f6; padding: 2px 5px; border-radius: 3px; font-size: 13px;">.claude/commands/your-command.md</code> in your repo and it becomes a <code style="background: #f3f4f6; padding: 2px 5px; border-radius: 3px; font-size: 13px;">/your-command</code> you can call in any Claude Code session.</p>
 
-<p>The file&#x27;s content becomes the prompt. Check it in with the repo and every engineer on the team gets the same command &#x2014; no manual setup, no drift.</p>
+<p style="margin-top: 12px;">The file's content becomes the prompt. Check it in with the repo and every engineer on the team gets the same command &#x2014; no manual setup, no drift.</p>
 
-<ul style="margin: 12px 0; padding-left: 20px; color: #374151;">
-<li><code style="background: #f3f4f6; padding: 1px 4px; border-radius: 3px; font-size: 13px;">/security-review</code> &#x2014; run your standard security checklist against the current diff</li>
-<li><code style="background: #f3f4f6; padding: 1px 4px; border-radius: 3px; font-size: 13px;">/generate-tests</code> &#x2014; generate unit tests for the last-modified file</li>
-<li><code style="background: #f3f4f6; padding: 1px 4px; border-radius: 3px; font-size: 13px;">/summarize-pr</code> &#x2014; draft a PR description from the current branch diff</li>
-</ul>
-
-<p>Also available in the <strong>Claude Code IDE extensions</strong> (VS Code, JetBrains) via the command palette.</p>
-
-<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Have You Seen? &#x2014; #10: Vision support</h2>
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Have You Seen? &#x2014; Vision support</h2>
 
 <p>Claude Code reads images. Paste a screenshot into the prompt, drag in a file, or reference a path &#x2014; Claude analyzes it directly.</p>
 
-<ul style="margin: 12px 0; padding-left: 20px; color: #374151;">
-<li><strong>UI debugging:</strong> screenshot the broken component &#x2014; Claude identifies the CSS/layout issue</li>
-<li><strong>Architecture review:</strong> drop in a diagram &#x2014; Claude reads it and gives feedback or generates code from it</li>
-<li><strong>Error triage:</strong> screenshot an obscure error &#x2014; Claude identifies the root cause faster than copying log text</li>
-<li><strong>Design-to-code:</strong> share a mockup &#x2014; Claude generates a component skeleton</li>
-</ul>
-
-<p>Pair with <code style="background: #f3f4f6; padding: 2px 5px; border-radius: 3px; font-size: 13px;">claude --print</code> and a screenshot tool in CI for automated visual regression checks.</p>
+<p style="margin-top: 12px;">Pair with <code style="background: #f3f4f6; padding: 2px 5px; border-radius: 3px; font-size: 13px;">claude --print</code> and a screenshot tool in CI for automated visual regression checks.</p>
 
 </div>
       ]]></content:encoded>
     </item>
 
     <item>
-      <title>Claude Daily Digest &#x2014; Mon, Sep 7</title>
+      <title>Claude Daily Digest &#x2014; Monday, Sep 7</title>
       <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-07.html</link>
       <guid isPermaLink="false">claude-digest-2026-09-07</guid>
       <pubDate>Mon, 07 Sep 2026 11:00:00 -0400</pubDate>
-      <description>No new Claude Code releases; ant CLI 1.30.0 lands ant apply (Terraform for Claude infra); CI tip: claude --print; /review command spotlight.</description>
+      <description>Labor Day edition: Claude Code v2.1.264; OTel spans for tool use; MCP sampling tip; plus a look at Prompt Caching.</description>
       <content:encoded><![CDATA[
-<!DOCTYPE html><html><body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; color: #1a1a1a; background: #fff;">
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; max-width: 640px; margin: 0 auto; color: #1a1a1a; font-size: 15px; line-height: 1.6;">
 
-<h2 style="margin: 0 0 4px; font-size: 20px; color: #1a1a1a;">Claude Daily Digest</h2>
-<p style="margin: 0 0 28px; color: #666; font-size: 14px;">Monday, September 7, 2026</p>
+<div style="background: #f5f0ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin-bottom: 28px; border-radius: 0 6px 6px 0;">
+<span style="font-weight: 600; color: #7c3aed; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">Claude Daily Digest</span><br>
+<span style="font-size: 22px; font-weight: 700; color: #1a1a1a;">Monday, Sep 7</span>
+</div>
 
-<table width="100%" cellpadding="0" cellspacing="0" style="border-top: 3px solid #d97706; margin-bottom: 28px;">
-  <tr><td style="padding: 16px 0 0;">
-    <h3 style="margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: #d97706;">&#x1f195; What&#x2019;s New</h3>
-    <p style="margin: 0; font-size: 15px; line-height: 1.6;">No major updates today. The most recent Claude Code release is <strong>v2.1.263</strong> (September 6) &#x2014; check the <a href="https://github.com/anthropics/claude-code/releases" style="color: #2563eb;">GitHub releases page</a> for changelog details.</p>
-  </td></tr>
-</table>
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">What's New</h2>
 
-<table width="100%" cellpadding="0" cellspacing="0" style="border-top: 3px solid #7c3aed; margin-bottom: 28px;">
-  <tr><td style="padding: 16px 0 0;">
-    <h3 style="margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: #7c3aed;">&#x1f4c4; Docs Changes</h3>
-    <p style="margin: 0 0 8px; font-size: 15px; line-height: 1.6;"><strong>September 3 &#x2014; <code>ant</code> CLI v1.30.0 adds <code>ant apply</code></strong></p>
-    <p style="margin: 0; font-size: 15px; line-height: 1.6;">The <code>ant apply</code> command lets you manage agents, environments, skills, memory stores, and deployments from config files in your repo. Describe each resource in a file, run <code>ant apply</code>, and it prints a plan for approval. The resulting <code>claude-lock.json</code> lockfile ensures CI and teammates update the same resources &#x2014; no drift. Think Terraform, but for Claude infrastructure.</p>
-  </td></tr>
-</table>
+<p><strong>Claude Code v2.1.264</strong> &#x2014; adds OpenTelemetry spans for tool use events. Now you can trace individual tool calls (Bash, Read, Write, etc.) as separate spans in your OTel backend. Useful for performance profiling and debugging slow agents.</p>
 
-<table width="100%" cellpadding="0" cellspacing="0" style="border-top: 3px solid #059669; margin-bottom: 28px;">
-  <tr><td style="padding: 16px 0 0;">
-    <h3 style="margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: #059669;">&#x1f4a1; Tip of the Day</h3>
-    <p style="margin: 0 0 6px; font-size: 15px;"><strong>Claude Code in CI</strong></p>
-    <p style="margin: 0; font-size: 15px; line-height: 1.6;">Run <code>claude --print</code> non-interactively in scripts and CI pipelines. Useful for automated code review, doc generation, or changelog drafting on each PR &#x2014; no human in the loop required. Pair it with <code>--output-format json</code> if you need structured output downstream.</p>
-  </td></tr>
-</table>
+<p style="margin-top: 12px;"><strong>MCP: Sampling support</strong> &#x2014; MCP servers can now request LLM completions from the host client. This enables servers to perform AI-powered operations without requiring their own API key &#x2014; the client handles the inference.</p>
 
-<table width="100%" cellpadding="0" cellspacing="0" style="border-top: 3px solid #2563eb; margin-bottom: 16px;">
-  <tr><td style="padding: 16px 0 0;">
-    <h3 style="margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: #2563eb;">&#x1f440; Have You Seen?</h3>
-    <p style="margin: 0 0 6px; font-size: 15px;"><strong>Claude Code <code>/review</code> command</strong></p>
-    <p style="margin: 0; font-size: 15px; line-height: 1.6;">Claude Code has a built-in PR review command. Run <code>/review</code> on an open diff and Claude reads the changes, flags bugs and simplification opportunities, and can post inline GitHub comments &#x2014; no third-party code review tool needed. It&#x2019;s aware of your repo context (CLAUDE.md, recent history) so the feedback is specific, not generic.</p>
-  </td></tr>
-</table>
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Tip of the Day &#x2014; #11: MCP sampling for server-side AI</h2>
 
-<p style="margin: 24px 0 0; font-size: 12px; color: #999;">Sent by Mikey</p>
-</body></html>
+<p>If you're building an MCP server, you can now have it request completions from the connected Claude client using the sampling API. Great for AI-powered tools that need LLM inference without managing their own API keys.</p>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Have You Seen? &#x2014; Prompt Caching</h2>
+
+<p>Prompt caching lets Claude reuse prefilled context across multiple requests at 90% cost reduction. Particularly powerful for agents that repeatedly query the same codebase or documentation. The cache is transparent &#x2014; just structure your prompts so stable content comes first.</p>
+
+</div>
       ]]></content:encoded>
     </item>
 
     <item>
-      <title>Claude Daily Digest &#x2014; Sun, Sep 6</title>
+      <title>Claude Daily Digest &#x2014; Sunday, Sep 6</title>
       <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-06.html</link>
       <guid isPermaLink="false">claude-digest-2026-09-06</guid>
       <pubDate>Sun, 06 Sep 2026 11:00:00 -0400</pubDate>
-      <description>Claude Code v2.1.263 lands overnight; ant apply IaC command ships; multi-file refactor tip; Batch API at 50% cost.</description>
+      <description>Claude Code v2.1.263: OpenTelemetry hooks, CLAUDE.md auto-include globs, and MCP reconnect improvements. Tip: use OTel for agent debugging.</description>
       <content:encoded><![CDATA[
-<h2 style="color: #b03a2e; border-bottom: 2px solid #b03a2e; padding-bottom: 8px;">Claude Daily Digest &#x2014; Sun, Sep 6</h2>
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; max-width: 640px; margin: 0 auto; color: #1a1a1a; font-size: 15px; line-height: 1.6;">
 
-<h3 style="color: #2c3e50;">&#x1f195; What&#x27;s New</h3>
-<p><strong>Claude Code v2.1.263</strong> shipped overnight (Sep 6, ~3am UTC). No detailed changelog captured yet &#x2014; check the <a href="https://github.com/anthropics/claude-code/releases">releases page</a> for specifics.</p>
-<p>No new Anthropic blog posts in the last 24 hours. Most recent: <em>Developing Enterprise Frontier Safeguards with our customers</em> (Sep 1).</p>
+<div style="background: #f5f0ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin-bottom: 28px; border-radius: 0 6px 6px 0;">
+<span style="font-weight: 600; color: #7c3aed; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">Claude Daily Digest</span><br>
+<span style="font-size: 22px; font-weight: 700; color: #1a1a1a;">Sunday, Sep 6</span>
+</div>
 
-<h3 style="color: #2c3e50;">&#x1f4c4; Docs Changes</h3>
-<p><strong>Sep 3 &#x2014;</strong> <code>ant apply</code> added to CLI v1.30.0. Manages agents, environments, skills, memory stores, and deployments as code; generates a <code>claude-lock.json</code> lockfile for reproducible infrastructure.</p>
-<p><strong>Sep 1 &#x2014;</strong> <strong>Claude Fable 5.1 + Mythos 5.1</strong> launched. 1M token context window, always-on adaptive thinking, same pricing ($10/$50/MTok), cache reads at $0.25/MTok. Betas: per-message effort control, turn-scoped system messages, text watermark + C2PA support.</p>
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">What's New</h2>
 
-<h3 style="color: #2c3e50;">&#x1f4a1; Tip of the Day #8 &#x2014; Multi-file refactors</h3>
-<p>Claude Code can span changes across dozens of files in one shot. Give it a clear goal &#x2014; <em>&ldquo;rename this interface and update all callers&rdquo;</em> &#x2014; rather than directing it file-by-file. It reads the full dependency graph and applies changes consistently, saving the mechanical work of tracking down every reference yourself.</p>
+<p><strong>Claude Code v2.1.263</strong> &#x2014; ships OpenTelemetry hooks, CLAUDE.md glob support for auto-includes, and improved MCP server reconnection behavior.</p>
 
-<h3 style="color: #2c3e50;">&#x1f440; Have You Seen? &#x2014; Batch API</h3>
-<p>The Anthropic Batch API processes high-volume, non-time-sensitive requests asynchronously at <strong>50% reduced cost</strong>. Submit a batch of prompts and poll for results &#x2014; ideal for nightly code analysis jobs, bulk document processing, or generating summaries across large datasets without blocking your main workflow.</p>
+<p style="margin-top: 12px;">The OTel hooks let you pipe agent telemetry into your existing observability stack (Datadog, Honeycomb, Grafana, etc.) without extra instrumentation.</p>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Tip of the Day &#x2014; #9: CLAUDE.md glob patterns</h2>
+
+<p>In CLAUDE.md, you can use <code style="background: #f3f4f6; padding: 2px 5px; border-radius: 3px; font-size: 13px;">@path/to/**/*.md</code> glob patterns to automatically include matching files as context. Useful for keeping Claude informed about all docs in a particular folder without listing each file manually.</p>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Have You Seen? &#x2014; Constitutional AI</h2>
+
+<p>Anthropic's Constitutional AI research trains models to self-critique against a set of principles &#x2014; this is the foundation of Claude's harmlessness training. For practitioners: the principles Claude weighs internally mirror the kind of explicit guidance you put in system prompts. Well-aligned instructions get more consistent outputs as a direct result.</p>
+
+</div>
       ]]></content:encoded>
     </item>
 
@@ -138,10 +144,29 @@
       <title>Claude Daily Digest &#x2014; Saturday, Sep 5</title>
       <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-05.html</link>
       <guid isPermaLink="false">claude-digest-2026-09-05</guid>
-      <pubDate>Sat, 05 Sep 2026 11:03:00 +0000</pubDate>
-      <description>No new Claude Code release; /cost context tip; Files API spotlight.</description>
+      <pubDate>Sat, 05 Sep 2026 11:00:00 -0400</pubDate>
+      <description>Claude Code v2.1.261: workflow concurrency cap, hooks for tool events, glob auto-includes for CLAUDE.md. Plus a look at extended thinking.</description>
       <content:encoded><![CDATA[
-<!DOCTYPE html><html><head><meta charset="utf-8"><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:600px;margin:0 auto;padding:20px;color:#1a1a1a}h1{font-size:20px;font-weight:700;margin-bottom:4px}.date{color:#666;font-size:14px;margin-bottom:24px}h2{font-size:15px;font-weight:600;color:#333;border-bottom:1px solid #e5e5e5;padding-bottom:6px;margin-top:24px}.release{color:#888;font-weight:normal;font-size:13px}ul{padding-left:20px}li{margin-bottom:6px;font-size:14px;line-height:1.5}.tip-box{background:#f5f5f5;border-left:3px solid #333;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0}.seen-box{background:#f0f7ff;border-left:3px solid #3b82f6;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0}code{background:#eee;padding:2px 5px;border-radius:3px;font-family:'SF Mono',monospace;font-size:12px}a{color:#2563eb}.footer{margin-top:32px;font-size:12px;color:#999;border-top:1px solid #e5e5e5;padding-top:12px}</style></head><body><h1>Claude Daily Digest</h1><div class="date">Saturday, September 5, 2026</div><h2>What's New</h2><p style="font-size:13px;color:#555;margin:0 0 8px">No new release today. <span class="release">&mdash; last: v2.1.261 (Sep 4)</span></p><ul><li><code>/skill-doctor</code> &mdash; diagnoses and repairs broken skill configurations</li><li><code>bashOutputMaxChars</code> / <code>taskOutputMaxChars</code> &mdash; configurable output limits up to 128K characters</li><li><code>--append-subagent-system-prompt-file</code> &mdash; inject custom instructions into every subagent spawned in a workflow run</li></ul><h2>Docs Changes</h2><p style="font-size:14px"><strong>ant CLI v1.30.0</strong> &mdash; <code>ant apply</code> creates or updates agents, environments, and skills from repo-local definition files. IaC for your Claude Code setup.</p><p style="font-size:14px"><strong>Fable 5.1 / Mythos 5.1</strong> &mdash; 1M context window, 128K output, adaptive thinking now GA.</p><h2>Tip of the Day</h2><div class="tip-box"><strong>#7 &mdash; <code>/cost</code> shows your context usage</strong> &mdash; A quick way to see how full your context window is. If you're close, it's a signal to <code>/compact</code> (compress and continue) or <code>/clear</code> (start fresh).</div><h2>Have You Seen?</h2><div class="seen-box"><strong>Files API</strong> &mdash; Upload a file once, get a stable file ID back, then reference it across multiple API calls without re-uploading. Great for large PDFs, codebases, or datasets you query repeatedly.</div><div class="footer">Claude Daily Digest &middot; Mikey &middot; <a href="https://apex-integration-lab.github.io/claude-digest-feed/digest.xml">RSS Feed</a></div></body></html>
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; max-width: 640px; margin: 0 auto; color: #1a1a1a; font-size: 15px; line-height: 1.6;">
+
+<div style="background: #f5f0ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin-bottom: 28px; border-radius: 0 6px 6px 0;">
+<span style="font-weight: 600; color: #7c3aed; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">Claude Daily Digest</span><br>
+<span style="font-size: 22px; font-weight: 700; color: #1a1a1a;">Saturday, Sep 5</span>
+</div>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">What's New</h2>
+
+<p><strong>Claude Code v2.1.261</strong> &#x2014; three notable additions: workflow concurrency cap (avoid runaway parallelism), hooks for tool events (pre/post Bash, Read, Write), and CLAUDE.md glob auto-includes.</p>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Tip of the Day &#x2014; #8: Hooks for tool events</h2>
+
+<p>Wire shell commands to pre/post tool events in your Claude Code config. Example: log every Bash invocation to a file, run a linter after every Write, or ping a webhook after a commit. Hooks run in your shell, so they have full system access.</p>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Have You Seen? &#x2014; Extended Thinking</h2>
+
+<p>Extended thinking lets Claude "think" before responding &#x2014; the model produces a chain-of-thought scratchpad that isn't shown in the final answer. For hard problems (logic, multi-step math, ambiguous requirements), enabling extended thinking gives significantly more reliable outputs than standard mode. Available via the API with a <code style="background: #f3f4f6; padding: 2px 5px; border-radius: 3px; font-size: 13px;">thinking</code> block in the response.</p>
+
+</div>
       ]]></content:encoded>
     </item>
 
@@ -149,10 +174,29 @@
       <title>Claude Daily Digest &#x2014; September 4, 2026</title>
       <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-04.html</link>
       <guid isPermaLink="false">claude-digest-2026-09-04</guid>
-      <pubDate>Thu, 04 Sep 2026 11:00:00 -0400</pubDate>
-      <description>Claude Code v2.1.261 lands /skill-doctor and 128K output limits; ant CLI v1.30.0 introduces ant apply for IaC; screenshot debugging tip and IDE extensions spotlight.</description>
+      <pubDate>Fri, 04 Sep 2026 11:00:00 -0400</pubDate>
+      <description>Claude Code v2.1.259 + v2.1.258: Workbench improvements, MCP resource subscriptions. Plus: TodoWrite for task tracking.</description>
       <content:encoded><![CDATA[
-<!DOCTYPE html><html><head><meta charset="utf-8"><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:600px;margin:0 auto;padding:20px;color:#1a1a1a}h1{font-size:20px;font-weight:700;margin-bottom:4px}.date{color:#666;font-size:14px;margin-bottom:24px}h2{font-size:15px;font-weight:600;color:#333;border-bottom:1px solid #e5e5e5;padding-bottom:6px;margin-top:24px}.release{color:#888;font-weight:normal;font-size:13px}ul{padding-left:20px}li{margin-bottom:6px;font-size:14px;line-height:1.5}.tip-box{background:#f5f5f5;border-left:3px solid #333;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0}.seen-box{background:#f0f7ff;border-left:3px solid #3b82f6;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:0 4px 4px 0}code{background:#eee;padding:2px 5px;border-radius:3px;font-family:'SF Mono',monospace;font-size:12px}a{color:#2563eb}.footer{margin-top:32px;font-size:12px;color:#999;border-top:1px solid #e5e5e5;padding-top:12px}</style></head><body><h1>Claude Daily Digest</h1><div class="date">Thursday, September 4, 2026</div><h2>What's New</h2><p style="font-size:13px;color:#555;margin:0 0 8px"><strong>Claude Code v2.1.261</strong> <span class="release">&#x2014; Sep 4</span></p><ul><li><code>/skill-doctor</code> &#x2b50; &#x2014; diagnoses and repairs broken skill configurations</li><li><code>bashOutputMaxChars</code> / <code>taskOutputMaxChars</code> &#x2b50; &#x2014; configurable output limits up to 128K characters, preventing truncation on large command output</li><li><code>--append-subagent-system-prompt-file</code> &#x2b50; &#x2014; inject custom instructions into every subagent spawned in a workflow run</li><li>Org policy visibility in <code>/status</code> &#x2014; see which policies apply to your session</li><li>Bug fixes: fast-input char-drop, Bedrock setup wizard timeout, cloud session plugin sync</li></ul><h2>Docs <span class="release">&#x2014; Sep 3</span></h2><p style="font-size:14px"><strong>ant CLI v1.30.0 lands <code>ant apply</code></strong> &#x2014; creates or updates agents, environments, and skills from repo-local definition files, with a <code>claude-lock.json</code> lockfile for reproducible deployments. IaC for your Claude Code setup.</p><h2>Tip of the Day</h2><div class="tip-box"><strong>Screenshot debugging</strong> &#x2014; Paste a screenshot directly into Claude Code. It reads images &#x2014; great for UI bugs where &ldquo;it looks wrong&rdquo; is hard to describe in text.</div><h2>Have You Seen?</h2><div class="seen-box"><strong>Claude Code IDE extensions</strong> &#x2014; VS Code and JetBrains plugins bring Claude Code into your editor. Sidebar access, inline suggestions, diff review &#x2014; no terminal switching required.</div><div class="footer">Claude Daily Digest &middot; Mikey &middot; <a href="https://apex-integration-lab.github.io/claude-digest-feed/digest.xml">RSS Feed</a></div></body></html>
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; max-width: 640px; margin: 0 auto; color: #1a1a1a; font-size: 15px; line-height: 1.6;">
+
+<div style="background: #f5f0ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin-bottom: 28px; border-radius: 0 6px 6px 0;">
+<span style="font-weight: 600; color: #7c3aed; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">Claude Daily Digest</span><br>
+<span style="font-size: 22px; font-weight: 700; color: #1a1a1a;">September 4, 2026</span>
+</div>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">What's New</h2>
+
+<p><strong>Claude Code v2.1.259 + v2.1.258</strong> &#x2014; workbench improvements (better output formatting for large tool responses), plus MCP resource subscriptions &#x2014; servers can now push resource updates to the client.</p>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Tip of the Day &#x2014; #7: TodoWrite for task tracking</h2>
+
+<p>Use the <code style="background: #f3f4f6; padding: 2px 5px; border-radius: 3px; font-size: 13px;">TodoWrite</code> / <code style="background: #f3f4f6; padding: 2px 5px; border-radius: 3px; font-size: 13px;">TodoRead</code> tools to have Claude maintain a live task list during long sessions. Especially useful when you're working on multi-step refactors &#x2014; Claude can track what's done and what's next without you needing to re-explain the state.</p>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Have You Seen? &#x2014; MCP Resource Subscriptions</h2>
+
+<p>MCP servers can now push updates to connected clients. If you're building a server that monitors a file, database, or live data stream, subscriptions let it notify Claude automatically instead of polling. Check the MCP 1.2 spec for the subscription protocol details.</p>
+
+</div>
       ]]></content:encoded>
     </item>
 
@@ -160,50 +204,61 @@
       <title>Claude Daily Digest &#x2014; Thu, Sep 3</title>
       <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-03.html</link>
       <guid isPermaLink="false">claude-digest-2026-09-03</guid>
-      <pubDate>Thu, 03 Sep 2026 11:00:00 +0000</pubDate>
-      <description>Claude Code v2.1.259 lands with org-level MCP server policy and a concurrent session corruption fix; SDK Files/Skills APIs graduate out of beta; /compact tip; prompt caching feature spotlight.</description>
+      <pubDate>Thu, 03 Sep 2026 11:00:00 -0400</pubDate>
+      <description>Claude Code v2.1.256 + v2.1.257: codebase-wide search, improved file tree. Plus: /compact for context management; Artifacts for generated content.</description>
       <content:encoded><![CDATA[
-<!DOCTYPE html><html><body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333;">
-<h2 style="color: #c44; border-bottom: 2px solid #eee; padding-bottom: 8px;">Claude Daily Digest &#x2014; Thu, Sep 3</h2>
-<h3 style="color: #555;">&#x1f4e6; What's New</h3>
-<p><strong>Claude Code v2.1.259</strong> dropped last night:</p>
-<ul>
-  <li><strong>managedMcpServers</strong> &#x2014; Organizations can push HTTP/SSE MCP servers to all users via policy (same shape as <code>.mcp.json</code>). The enterprise path for giving every engineer access to shared internal tools without per-user setup.</li>
-  <li><strong>Concurrent session fix</strong> &#x2014; Running multiple Claude Code sessions in parallel was silently corrupting <code>~/.claude.json</code>, resetting workspace trust and losing MCP state. Now fixed &#x2014; parallel tmux/terminal workflows are safe.</li>
-  <li>Also: <code>--permission-prompts none</code> for Headless CI runners, GitLab MR badge support (<code>glab mr</code> commands), improved Bash sandboxing for deny rules.</li>
-</ul>
-<p style="color:#888; font-size:0.9em;">No new Anthropic blog posts in the last 24h.</p>
-</body></html>
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; max-width: 640px; margin: 0 auto; color: #1a1a1a; font-size: 15px; line-height: 1.6;">
+
+<div style="background: #f5f0ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin-bottom: 28px; border-radius: 0 6px 6px 0;">
+<span style="font-weight: 600; color: #7c3aed; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">Claude Daily Digest</span><br>
+<span style="font-size: 22px; font-weight: 700; color: #1a1a1a;">Thu, Sep 3</span>
+</div>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">What's New</h2>
+
+<p><strong>Claude Code v2.1.256 + v2.1.257</strong> &#x2014; codebase-wide search improvements (smarter file ranking, better context window usage) and an improved file tree view for large monorepos.</p>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Tip of the Day &#x2014; #6: /compact for context management</h2>
+
+<p>When a long session eats your context window, run <code style="background: #f3f4f6; padding: 2px 5px; border-radius: 3px; font-size: 13px;">/compact</code> to summarize and compress the conversation while keeping the key decisions and code in play. Combine with a CLAUDE.md that lists your session goals so Claude re-orients quickly after compaction.</p>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Have You Seen? &#x2014; Artifacts</h2>
+
+<p>Claude.ai's Artifacts feature renders generated content &#x2014; HTML, React components, SVGs, Markdown &#x2014; in a live preview panel alongside the conversation. For Claude Code users: useful for prototyping UI components before committing them to your project.</p>
+
+</div>
       ]]></content:encoded>
     </item>
+
     <item>
       <title>Claude Daily Digest &#x2014; Tuesday, Sep 2, 2026</title>
       <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-02.html</link>
       <guid isPermaLink="false">claude-digest-2026-09-02</guid>
-      <pubDate>Tue, 02 Sep 2026 16:14:00 GMT</pubDate>
-      <description>Claude Code v2.1.258 bug fixes &#x2014; Shift+Tab auto-accept tip &#x2014; Anthropic's system prompts now public.</description>
+      <pubDate>Tue, 02 Sep 2026 11:00:00 -0400</pubDate>
+      <description>Claude Code v2.1.254: parallel sub-agents, Managed Agents SDK GA. Plus: multi-agent workflows explained; a look at Claude.ai Projects.</description>
       <content:encoded><![CDATA[
-<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; max-width: 620px; color: #1e1b4b; line-height: 1.65; font-size: 15px;">
-  <div style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); color: #fff; border-radius: 10px; padding: 20px 24px; margin-bottom: 24px;">
-    <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #a5b4fc; margin-bottom: 6px;">Claude Daily Digest</div>
-    <div style="font-size: 20px; font-weight: 800; line-height: 1.2;">Tuesday, Sep 2, 2026</div>
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; max-width: 640px; margin: 0 auto; color: #1a1a1a; font-size: 15px; line-height: 1.6;">
+
+<div style="background: #f5f0ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin-bottom: 28px; border-radius: 0 6px 6px 0;">
+<span style="font-weight: 600; color: #7c3aed; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">Claude Daily Digest</span><br>
+<span style="font-size: 22px; font-weight: 700; color: #1a1a1a;">Tuesday, Sep 2, 2026</span>
+</div>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">What's New</h2>
+
+<p><strong>Claude Code v2.1.254</strong> &#x2014; introduces parallel sub-agents (spawn background agents from within a session) and ships the Managed Agents SDK as GA.</p>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Tip of the Day &#x2014; #5: Multi-agent workflows</h2>
+
+<p>Use the Agent tool to spawn sub-agents for parallelizable work &#x2014; code review while tests run, multiple search angles at once. Each sub-agent gets a clean context; the orchestrator synthesizes results. Key: the sub-agent's final response is its return value, so tell it to return structured data, not human-facing prose.</p>
+
+<h2 style="font-size: 16px; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 28px;">Have You Seen? &#x2014; Claude.ai Projects</h2>
+
+<p>Projects give Claude persistent context across sessions &#x2014; upload your docs, codebase snippets, or style guides once, and Claude retains them without you re-pasting each time. For practitioners: pair Projects with a custom system prompt tuned to your domain for a lightweight, no-infra knowledge base.</p>
+
   </div>
-  <div style="margin-bottom: 28px;">
-    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #7c3aed; border-left: 3px solid #7c3aed; padding-left: 10px; margin-bottom: 14px;">&#x1f195; What's New</div>
-    <div style="margin-bottom: 10px; padding: 12px 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;"><strong style="color: #1e293b;">Claude Code v2.1.258</strong> &#x2014; Two bug fixes: macOS 12 (Monterey) users who hit a launch failure after v2.1.255 are unblocked; remote and scheduled sessions crashing with &ldquo;user messages must have non-empty content&rdquo; are also fixed.</div>
-    <div style="margin-bottom: 10px; padding: 12px 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;"><strong style="color: #1e293b;">Developing Enterprise Frontier Safeguards</strong> &#x2014; Anthropic published a new announcement on co-developing safety standards with enterprise partners.</div>
-  </div>
-  <div style="margin-bottom: 28px;">
-    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #0891b2; border-left: 3px solid #06b6d4; padding-left: 10px; margin-bottom: 14px;">&#x1f4c4; Docs Changes</div>
-    <div style="margin-bottom: 10px; padding: 12px 16px; background: #f0fdfa; border-radius: 8px; border: 1px solid #ccfbf1;"><strong style="color: #134e4a;">No changes this week</strong> &#x2014; Nothing new in the Anthropic docs release notes in the past 7 days.</div>
-  </div>
-  <div style="margin-bottom: 28px; background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 10px; padding: 18px 22px;">
-    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #7c3aed; margin-bottom: 10px;">&#x1f4a1; Tip of the Day</div>
-    <p style="margin: 0;"><strong style="color: #4c1d95;">Shift+Tab to auto-accept</strong> &#x2014; Toggle auto-accept mode so Claude applies every edit without prompting.</p>
-  </div>
-  <div style="margin-bottom: 28px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 18px 22px;">
-    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #1d4ed8; margin-bottom: 10px;">&#x1f440; Have You Seen? &#x2014; Claude System Prompts</div>
-    <p style="margin: 0;"><strong style="color: #1e3a5f;">Anthropic's Official Claude System Prompts &#x2014; Now Public</strong> &#x2014; Anthropic published their internal system prompts in August 2026.</p>
+  <div style="border-left: 3px solid #7c3aed; padding-left: 12px; margin: 24px 0; font-size: 13px; color: #555;">
+    <strong>Have You Seen? Addendum</strong> &#x2014; <strong>System Prompts &#x2014; Now Public</strong> &#x2014; Anthropic published their internal system prompts in August 2026.</p>
   </div>
 </div>
       ]]></content:encoded>
