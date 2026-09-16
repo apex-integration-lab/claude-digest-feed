@@ -11,6 +11,32 @@
     <atom:link href="https://apex-integration-lab.github.io/claude-digest-feed/digest.xml" rel="self" type="application/rss+xml"/>
 
     <item>
+      <title>Claude Daily Digest &#x2014; Tue, Sep 15</title>
+      <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-15.html</link>
+      <guid isPermaLink="false">claude-digest-2026-09-15</guid>
+      <pubDate>Tue, 15 Sep 2026 11:03:00 -0400</pubDate>
+      <description>Claude Code v2.1.273 lands with bash permission fix and session forking; compaction-on-demand API beta; tip: Claude Code reads your git history by default.</description>
+      <content:encoded><![CDATA[<!DOCTYPE html><html><head><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1a1a1a;max-width:600px;margin:0 auto;padding:20px}h2{color:#4a1f93;font-size:15px;margin:24px 0 8px;border-bottom:1px solid #e0d6f5;padding-bottom:4px}p{margin:0 0 8px;line-height:1.5;font-size:14px}ul{font-size:14px;margin:6px 0;padding-left:20px;line-height:1.7}a{color:#7c3aed}code{background:#f0ebff;padding:1px 5px;border-radius:3px;font-size:13px}</style></head><body><h2>What&#39;s New</h2>
+<p><strong>Claude Code v2.1.273</strong> released Sep 15. Key changes:</p>
+<ul>
+  <li><strong>Gateway hint headers</strong> &mdash; Claude Code sends metadata headers to help MCP servers understand the calling context</li>
+  <li><strong>MDM settings fix</strong> &mdash; MDM-managed config was being ignored on first launch; now resolved</li>
+  <li><strong>Bash permission bypass fix</strong> &mdash; closes a path where bash tool calls could skip permission checks in certain auto-mode scenarios</li>
+  <li><strong>Session forking from Remote Control</strong> &mdash; fork a running session into a new branch from the Remote Control interface</li>
+</ul>
+
+<h2>Docs Changes</h2>
+<p><strong>Sep 14:</strong> <em>Messages API compaction on demand</em> (beta) &mdash; trigger conversation compaction manually and receive a signed compaction block summarizing prior messages. Enable with the <code>compact-2026-09-04</code> beta header. Useful for long-running agentic sessions.</p>
+
+<h2>Tip #17 &mdash; Git-Aware by Default</h2>
+<p>Claude Code reads your git history, branch diffs, and blame automatically. Ask it <em>&ldquo;what changed in the last 3 commits that could explain this bug?&rdquo;</em> and it digs through the log &mdash; no extra setup needed. Especially useful when debugging a regression where you know roughly when it appeared but not why.</p>
+
+<h2>Have You Seen? Official Claude System Prompts</h2>
+<p>Anthropic published their own system prompts publicly in August 2026. The Claude Code tool definitions, how Opus 5 evolved, and internal behaviors are now documented. Simon Willison maintains a git-tracking repo that follows prompt changes over time &mdash; a great resource for anyone building Claude Code training material or writing their own system prompts.</p>
+</body></html>]]></content:encoded>
+    </item>
+
+    <item>
       <title>Claude Daily Digest &#x2014; Friday, Sep 11</title>
       <link>https://apex-integration-lab.github.io/claude-digest-feed/digests/2026-09-11.html</link>
       <guid isPermaLink="false">claude-digest-2026-09-11</guid>
