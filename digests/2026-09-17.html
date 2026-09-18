@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude Daily Digest — Thu, Sep 17</title>
+  <style>
+    :root {
+      --blue: #1d4ed8;
+      --text: #1a1a1a;
+      --text-sub: #4b5563;
+      --bg: #ffffff;
+      --bg-section: #f0f5ff;
+      --code-bg: #f1f5f9;
+      --border: #e2e8f0;
+      --link: #1d4ed8;
+      --back-color: #64748b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --blue: #60a5fa;
+        --text: #f1f5f9;
+        --text-sub: #94a3b8;
+        --bg: #0f172a;
+        --bg-section: #1e2535;
+        --code-bg: #1e293b;
+        --border: #334155;
+        --link: #60a5fa;
+        --back-color: #94a3b8;
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 0;
+    }
+    .page-header {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+      color: #fff;
+      padding: 2rem 1.5rem 1.5rem;
+      border-bottom: 3px solid #1e40af;
+    }
+    .page-header .label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.75;
+      margin-bottom: 0.4rem;
+    }
+    .page-header .date {
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .back {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--back-color);
+      padding: 0.85rem 1.5rem;
+      text-decoration: none;
+    }
+    .back:hover { text-decoration: underline; }
+    .content {
+      padding: 0.25rem 1.5rem 2.5rem;
+    }
+    .content p { margin: 0.8rem 0; }
+    .content ul, .content ol { padding-left: 1.5rem; margin: 0.75rem 0; }
+    .content li { margin: 0.35rem 0; }
+    .content a { color: var(--link); }
+    .content code {
+      background: var(--code-bg);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-size: 0.875em;
+      font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+    }
+    .content h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--blue);
+      border-left: 3px solid var(--blue);
+      padding: 0.6rem 0.9rem;
+      margin: 1.75rem 0 0.75rem;
+      background: var(--bg-section);
+      border-radius: 0 6px 6px 0;
+    }
+    .content h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin: 1.25rem 0 0.5rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      .content, .content * {
+        color: var(--text) !important;
+        border-color: var(--border) !important;
+      }
+      .content h2, .content h3 {
+        color: var(--blue) !important;
+        border-left-color: var(--blue) !important;
+        background: var(--bg-section) !important;
+      }
+      .content code, .content pre {
+        background: var(--code-bg) !important;
+      }
+      .content a { color: var(--link) !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <div class="label">Claude Daily Digest</div>
+    <div class="date">Thu, Sep 17</div>
+  </div>
+  <a class="back" href="../">&larr; All digests</a>
+  <div class="content">
+<h2>&#x1F195; What&#x27;s New</h2>
+<p>Two Claude Code releases on Sep 17:</p>
+<p><strong>v2.1.275</strong> &mdash; three headline features:</p>
+<ul>
+  <li><strong>Skills sync from claude.ai</strong> &mdash; plugins from your claude.ai account now sync into terminal sessions automatically.</li>
+  <li><strong>Ctrl+Enter sends immediately</strong> &mdash; interrupts the current turn and sends without waiting for it to finish.</li>
+  <li><strong>/plugin install --marketplace</strong> &mdash; browse and install plugins directly from the terminal.</li>
+</ul>
+<p><strong>v2.1.274</strong> &mdash; observability and reliability:</p>
+<ul>
+  <li><strong>OTel <code>managed_settings_resolved</code> audit event</strong> &mdash; trace when managed settings are applied; useful for compliance auditing.</li>
+  <li><strong><code>CLAUDE_CODE_MCP_STARTUP_WAIT_MS</code></strong> &mdash; configurable MCP startup wait; fixes CI/MCP race conditions.</li>
+  <li><strong>Effort on trace spans</strong> &mdash; per-request effort now visible in OTel traces.</li>
+</ul>
+<p>Also from Anthropic: <em>&#8220;Measurements for understanding the pace of AI development inside frontier labs&#8221;</em> and <em>&#8220;Introducing the Life Sciences Verification Program.&#8221;</em></p>
+<h2>&#x1F4C4; Docs Changes</h2>
+<p><strong>Sep 14 &mdash; On-Demand Conversation Compaction (beta):</strong> Trigger compaction manually via the Messages API using the <code>compact-2026-09-04</code> beta header. Returns a signed compaction block summarizing prior messages &mdash; designed for long-running agent loops where you want fine-grained control over context trimming.</p>
+<p><strong>Sep 10 &mdash; Claude Managed Agents:</strong> Infrastructure for multi-agent workflows documented, including auto permission evaluation and terminal session attachment via <code>ant beta:sessions connect</code>.</p>
+<h2>&#x1F4A1; Tip of the Day &mdash; #19</h2>
+<p><strong>Voice input works in Claude Code</strong></p>
+<p>On desktop, use your OS voice-to-text to dictate prompts directly into Claude Code. Especially useful during long debugging sessions when you&#x27;re describing what you&#x27;re <em>seeing</em> rather than what the code says &mdash; narrating observation is faster than typing it.</p>
+<h2>&#x1F440; Have You Seen? &mdash; Prompt Caching</h2>
+<p>Large, stable contexts &mdash; system prompts, reference docs, big codebases &mdash; can be cached server-side at ~10% of normal token cost. Add <code>cache_control: &#x7B;type: &#x22;ephemeral&#x22;&#x7D;</code> to any content block you want cached. The cache persists for 5 minutes (extended to 1 hour with the extended-cache beta).</p>
+<p>Essential before any high-volume production deployment. Break-even is low: if the same context appears in more than ~10 calls, caching saves money on every subsequent call.</p>
+<hr style="border: none; border-top: 1px solid var(--border); margin: 24px 0;">
+<p style="font-size: 0.8em; color: var(--text-sub);">Claude Daily Digest &middot; Developer Platforms &amp; AI Enablement</p>
+  </div>
+  <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
