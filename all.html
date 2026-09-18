@@ -42,7 +42,15 @@
     ul { list-style: none; }
     li { border-top: 1px solid var(--border); }
     li:last-child { border-bottom: 1px solid var(--border); }
-    .item { display: flex; justify-content: space-between; align-items: center; padding: 13px 0; text-decoration: none; color: var(--text); gap: 16px; }
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 0;
+      text-decoration: none;
+      color: var(--text);
+      gap: 16px;
+    }
     .item:hover .item-title { color: var(--accent); }
     .item-title { font-size: 15px; font-weight: 500; }
     .item-date { font-size: 13px; color: var(--date); white-space: nowrap; flex-shrink: 0; }
@@ -55,6 +63,7 @@
   <div class="back"><a href="index.html">&larr; Back</a></div>
   <h1>All Digests</h1>
   <ul>
+    <li><a class="item" href="digests/2026-09-17.html"><span class="item-title">Claude Daily Digest &mdash; Thu, Sep 17</span><span class="item-date">Thu, Sep 17</span></a></li>
     <li><a class="item" href="digests/2026-09-15.html"><span class="item-title">Claude Daily Digest &mdash; Tue, Sep 15</span><span class="item-date">Tue, Sep 15</span></a></li>
     <li><a class="item" href="digests/2026-09-14.html"><span class="item-title">Claude Daily Digest &mdash; Mon, Sep 14</span><span class="item-date">Mon, Sep 14</span></a></li>
     <li><a class="item" href="digests/2026-09-12.html"><span class="item-title">Claude Daily Digest &mdash; Fri, Sep 12</span><span class="item-date">Fri, Sep 12</span></a></li>
