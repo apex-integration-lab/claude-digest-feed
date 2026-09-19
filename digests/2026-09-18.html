@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude Daily Digest — Fri, Sep 18</title>
+  <style>
+    :root {
+      --blue: #1d4ed8;
+      --text: #1a1a1a;
+      --text-sub: #4b5563;
+      --bg: #ffffff;
+      --bg-section: #f0f5ff;
+      --code-bg: #f1f5f9;
+      --border: #e2e8f0;
+      --link: #1d4ed8;
+      --back-color: #64748b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --blue: #60a5fa;
+        --text: #f1f5f9;
+        --text-sub: #94a3b8;
+        --bg: #0f172a;
+        --bg-section: #1e2535;
+        --code-bg: #1e293b;
+        --border: #334155;
+        --link: #60a5fa;
+        --back-color: #94a3b8;
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 0;
+    }
+    .page-header {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+      color: #fff;
+      padding: 2rem 1.5rem 1.5rem;
+      border-bottom: 3px solid #1e40af;
+    }
+    .page-header .label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.75;
+      margin-bottom: 0.4rem;
+    }
+    .page-header .date {
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .back {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--back-color);
+      padding: 0.85rem 1.5rem;
+      text-decoration: none;
+    }
+    .back:hover { text-decoration: underline; }
+    .content {
+      padding: 0.25rem 1.5rem 2.5rem;
+    }
+    .content p { margin: 0.8rem 0; }
+    .content ul, .content ol { padding-left: 1.5rem; margin: 0.75rem 0; }
+    .content li { margin: 0.35rem 0; }
+    .content a { color: var(--link); }
+    .content code {
+      background: var(--code-bg);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-size: 0.875em;
+      font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+    }
+    .content h1 { display: none; }
+    .content h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--blue);
+      border-left: 3px solid var(--blue);
+      padding: 0.6rem 0.9rem;
+      margin: 1.75rem 0 0.75rem;
+      background: var(--bg-section);
+      border-radius: 0 6px 6px 0;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+    .content h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin: 1.25rem 0 0.5rem;
+    }
+    .tip-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 14px 16px;
+      border-radius: 0 6px 6px 0;
+      margin: 10px 0;
+      font-size: 0.95rem;
+    }
+    .feature-box {
+      background: #f0fdf4;
+      border-left: 4px solid #22c55e;
+      padding: 14px 16px;
+      border-radius: 0 6px 6px 0;
+      margin: 10px 0;
+      font-size: 0.95rem;
+    }
+    .hotfix {
+      display: inline-block;
+      background: #fee2e2;
+      color: #991b1b;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      margin-left: 4px;
+    }
+    .footer {
+      font-size: 12px;
+      color: #999;
+      margin-top: 36px;
+      border-top: 1px solid #e5e5e5;
+      padding-top: 14px;
+    }
+    @media (prefers-color-scheme: dark) {
+      .content, .content * {
+        color: var(--text) !important;
+        border-color: var(--border) !important;
+      }
+      .content h2 {
+        color: var(--blue) !important;
+        border-left-color: var(--blue) !important;
+        background: var(--bg-section) !important;
+      }
+      .content code, .content pre {
+        background: var(--code-bg) !important;
+      }
+      .content a { color: var(--link) !important; }
+      .tip-box { background: #1e2d4a !important; }
+      .feature-box { background: #0f2d1a !important; }
+      .hotfix { background: #3b1010 !important; color: #fca5a5 !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <div class="label">Claude Daily Digest</div>
+    <div class="date">Fri, Sep 18</div>
+  </div>
+  <a class="back" href="../">&larr; All digests</a>
+  <div class="content">
+<h2>&#x1F195; What&#39;s New</h2>
+<p><strong>v2.1.277</strong> &#8212; headline feature for teams running multiple AI coding tools:</p>
+<ul>
+  <li>&#11088; <strong>AGENTS.md support</strong> &#8212; Claude Code's first built-in mod. When no <code>CLAUDE.md</code> is present, Claude Code now reads <code>AGENTS.md</code>. Teams using Cursor, Codex, or other tools that already read <code>AGENTS.md</code> get shared instruction files across all tools automatically. One config, every AI assistant.</li>
+  <li>&#11088; <strong>SDK / <code>claude -p</code> hang fix</strong> &#8212; Headless sessions that error now exit cleanly with code 1 instead of hanging. <strong>Critical for CI pipelines.</strong></li>
+  <li>Gateway egress proxy env var (<code>CLAUDE_GATEWAY_PROXY_IS_EGRESS_BOUNDARY=1</code>), empty-text-block crash fix, multi-version logout fix.</li>
+</ul>
+<p><strong>v2.1.276</strong> <span class="hotfix">HOTFIX</span> &#8212; Fixed 400 errors for users with <code>ANTHROPIC_BASE_URL</code> pointing at a proxy or gateway (v2.1.275 regression). Upgrade immediately if you saw failures.</p>
+<p><strong>v2.1.275</strong> (Sep 17) &#8212; Skills/plugins sync from claude.ai &#11088;, <code>Ctrl+Enter</code> send-now shortcut, <code>/plugin install --marketplace</code>.</p>
+<h2>&#x1F4C4; Docs Changes</h2>
+<ul>
+  <li><strong>Sep 18 &#8212; Compliance API:</strong> Claude in Chrome session transcripts now available in beta for Enterprise orgs via existing Compliance Access Key.</li>
+  <li><strong>Sep 14 &#8212; On-Demand Compaction:</strong> Control exactly when to compact long conversations via the <code>compact-2026-09-04</code> beta header. Returns a signed compaction block you own and can replay.</li>
+  <li><strong>Sep 10 &#8212; Managed Agents:</strong> New <code>auto</code> permission policy (server evaluates each tool call dynamically) + <code>ant beta:sessions connect</code> for live terminal attachment to running agent sessions.</li>
+</ul>
+<h2>&#x1F4A1; Tip of the Day</h2>
+<div class="tip-box"><strong>#20 &#8212; Claude Code tracks what it changed</strong><br><br>After a session, run <code>git diff</code> to see every file Claude touched. Review the diff before committing &#8212; this is the moment to catch anything you'd tweak. Claude Code is thorough, but a quick scan keeps you in the loop on your own codebase.</div>
+<h2>&#x1F440; Have You Seen?</h2>
+<div class="feature-box"><strong>Extended Thinking</strong><br><br>Sonnet and Opus can reason step-by-step <em>before</em> writing a final answer &#8212; visible as a collapsible thinking block. Enable when tackling architecture decisions, security reviews, or debugging subtle failures. In Claude Code: <code>--model opus</code> for maximum depth. Via API: <code>thinking: {type: &quot;enabled&quot;, budget_tokens: 10000}</code>.</div>
+<div class="footer">Claude Daily Digest &middot; Sent by Mikey</div>
+  </div>
+  <script data-goatcounter="https://claude-digest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
